@@ -1090,16 +1090,6 @@
 
 }
 
-.admin-page{
-
-    max-width:800px;
-
-    margin:120px auto 60px;
-
-    padding:20px;
-
-}
-
 #memberName,
 #memberPhone,
 #memberBirthday{
@@ -1197,11 +1187,13 @@ summary:hover{
 
 .admin-page{
 
-    max-width:1200px;
+    min-height:100vh;
 
-    margin:120px auto 60px;
+    background:#F8FAFC;
 
-    padding:20px;
+    border-radius:30px;
+
+    padding:40px;
 
 }
 
