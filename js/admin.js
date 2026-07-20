@@ -168,11 +168,13 @@ fetch(
 
                 else{
 
+                    normalCount++;
+                
                     normalSection
                     .appendChild(
                         details
                     );
-
+                
                 }
 
             }
