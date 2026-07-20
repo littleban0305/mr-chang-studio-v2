@@ -187,6 +187,11 @@ fetch(
             "normalCount"
         ).textContent =
         normalCount;
+
+        document.getElementById(
+            "blacklistCount"
+        ).textContent =
+        blacklistCount;
         
         document.getElementById(
             "totalBookings"
