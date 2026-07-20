@@ -1,3 +1,25 @@
+function formatDate(dateString){
+
+    const date =
+    new Date(dateString);
+
+    return date.toLocaleDateString(
+        "zh-TW"
+    );
+
+}
+
+function formatDateTime(dateString){
+
+    const date =
+    new Date(dateString);
+
+    return date.toLocaleString(
+        "zh-TW"
+    );
+
+}
+
 const vipSection =
 document.getElementById(
     "vipSection"
@@ -91,17 +113,35 @@ fetch(
                 
                         <div class="admin-item">
                             <span>生日</span>
-                            <strong>${booking.birthday}</strong>
+                            <strong>${formatDate(
+                                booking.birthday
+                            )}</strong>
                         </div>
                 
                         <div class="admin-item">
                             <span>預約時段</span>
-                            <strong>${booking.slot}</strong>
+                            <strong>
+                            ${
+                            new Date(
+                            booking.slot
+                            ).toLocaleString(
+                            "zh-TW",
+                            {
+                            month:"numeric",
+                            day:"numeric",
+                            hour:"2-digit",
+                            minute:"2-digit"
+                            }
+                            )
+                            }
+                            </strong>
                         </div>
                 
                         <div class="admin-item">
                             <span>送出時間</span>
-                            <strong>${booking.createdAt}</strong>
+                            <strong>${formatDateTime(
+                                booking.createdAt
+                            )}</strong>
                         </div>
                 
                         <div class="admin-item">
