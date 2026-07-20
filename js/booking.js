@@ -1,3 +1,8 @@
+const slotList =
+document.getElementById(
+    "slotList"
+);
+
 const slotButtons =
 document.querySelectorAll(
     ".slot-btn"
