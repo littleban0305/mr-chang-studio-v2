@@ -87,3 +87,47 @@ if(bookBtn){
     );
 
 }
+
+fetch(
+    "https://docs.google.com/spreadsheets/d/1PW_TBPUWeXncwL5G1tDG_qktHC7ChWd0AekIqHq6QSQ/export?format=csv&gid=0"
+)
+.then(
+    response=>response.text()
+)
+.then(
+    csv=>{
+
+        const rows =
+        csv.split("\n");
+
+        rows.shift();
+
+        rows.forEach(
+            slot=>{
+
+                slot =
+                slot.trim();
+
+                if(!slot)
+                return;
+
+                const btn =
+                document.createElement(
+                    "button"
+                );
+
+                btn.className =
+                "slot-btn";
+
+                btn.textContent =
+                slot;
+
+                slotList.appendChild(
+                    btn
+                );
+
+            }
+        );
+
+    }
+);
