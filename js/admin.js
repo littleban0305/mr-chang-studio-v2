@@ -29,51 +29,106 @@ fetch(
                 document.createElement(
                     "details"
                 );
-
-                const summary =
-                document.createElement(
-                    "summary"
-                );
-
-                summary.textContent =
-                booking.name;
-
-                details.appendChild(
-                    summary
-                );
-
-                details.innerHTML += `
-                <div class="booking-card">
-
-                    <p>
-                        📞 ${booking.phone}
-                    </p>
-
-                    <p>
-                        🎂 ${booking.birthday}
-                    </p>
-
-                    <p>
-                        📅 ${booking.slot}
-                    </p>
-
-                    <p>
-                        📝 ${booking.note}
-                    </p>
-
-                    <p>
-                        ⏰ ${booking.createdAt}
-                    </p>
-
-                    <p>
-                        📌 ${booking.status}
-                    </p>
-
-                    <p>
-                        💬 ${booking.memberNote}
-                    </p>
-
+                
+                details.className =
+                "admin-member";
+                
+                let tagClass =
+                "normal-tag";
+                
+                if(
+                    booking.memberType
+                    ===
+                    "VIP"
+                ){
+                
+                    tagClass =
+                    "vip-tag";
+                
+                }
+                
+                else if(
+                    booking.memberType
+                    ===
+                    "黑名單"
+                ){
+                
+                    tagClass =
+                    "blacklist-tag";
+                
+                }
+                
+                details.innerHTML = `
+                
+                <summary>
+                
+                    ${booking.name}
+                
+                    <span class="${tagClass}">
+                        ${booking.memberType}
+                    </span>
+                
+                </summary>
+                
+                <div class="admin-content">
+                
+                    <div class="admin-grid">
+                
+                        <div class="admin-item">
+                            <span>電話</span>
+                            <strong>${booking.phone}</strong>
+                        </div>
+                
+                        <div class="admin-item">
+                            <span>生日</span>
+                            <strong>${booking.birthday}</strong>
+                        </div>
+                
+                        <div class="admin-item">
+                            <span>預約時段</span>
+                            <strong>${booking.slot}</strong>
+                        </div>
+                
+                        <div class="admin-item">
+                            <span>送出時間</span>
+                            <strong>${booking.createdAt}</strong>
+                        </div>
+                
+                        <div class="admin-item">
+                            <span>狀態</span>
+                            <strong>${booking.status}</strong>
+                        </div>
+                
+                        <div class="admin-item">
+                            <span>備註</span>
+                            <strong>${booking.note || "無"}</strong>
+                        </div>
+                
+                        <div class="admin-item">
+                            <span>會員備註</span>
+                            <strong>${booking.memberNote || "無"}</strong>
+                        </div>
+                
+                    </div>
+                
+                    <div class="admin-actions">
+                
+                        <button class="btn-confirm">
+                            確認預約
+                        </button>
+                
+                        <button class="btn-wait">
+                            候補
+                        </button>
+                
+                        <button class="btn-blacklist">
+                            黑名單
+                        </button>
+                
+                    </div>
+                
                 </div>
+                
                 `;
 
                 if(
