@@ -1192,3 +1192,256 @@ summary:hover{
     opacity:.85;
 
 }
+
+/* ===== Admin V2 ===== */
+
+.admin-page{
+
+    max-width:1200px;
+
+    margin:120px auto 60px;
+
+    padding:20px;
+
+}
+
+.admin-page h1{
+
+    text-align:center;
+
+    font-size:2.5rem;
+
+    margin-bottom:40px;
+
+    color:#1F2937;
+
+}
+
+.admin-section{
+
+    margin-bottom:40px;
+
+}
+
+.admin-section h2{
+
+    margin-bottom:20px;
+
+    font-size:1.5rem;
+
+    color:#1F2937;
+
+}
+
+.admin-member{
+
+    background:white;
+
+    border-radius:20px;
+
+    margin-bottom:15px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.08);
+
+    transition:.25s;
+
+}
+
+.admin-member:hover{
+
+    transform:
+    translateY(-3px);
+
+}
+
+.admin-member summary{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0ABAB5,
+        #55D6D1
+    );
+
+    color:white;
+
+    font-size:1.1rem;
+
+    font-weight:700;
+
+}
+
+.admin-member[open] summary{
+
+    border-bottom:
+    1px solid rgba(
+        255,255,255,.2
+    );
+
+}
+
+.admin-content{
+
+    padding:25px;
+
+    background:white;
+
+}
+
+.admin-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(
+            220px,
+            1fr
+        )
+    );
+
+    gap:15px;
+
+}
+
+.admin-item{
+
+    background:#F8FAFC;
+
+    border-radius:14px;
+
+    padding:15px;
+
+}
+
+.admin-item span{
+
+    display:block;
+
+    font-size:.8rem;
+
+    color:#6B7280;
+
+    margin-bottom:6px;
+
+}
+
+.admin-item strong{
+
+    color:#1F2937;
+
+}
+
+.vip-tag{
+
+    background:#F59E0B;
+
+    color:white;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    font-size:.8rem;
+
+}
+
+.normal-tag{
+
+    background:#0ABAB5;
+
+    color:white;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    font-size:.8rem;
+
+}
+
+.blacklist-tag{
+
+    background:#EF4444;
+
+    color:white;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    font-size:.8rem;
+
+}
+
+.admin-actions{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.admin-actions button{
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:12px 18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.btn-confirm{
+
+    background:#10B981;
+
+    color:white;
+
+}
+
+.btn-wait{
+
+    background:#F59E0B;
+
+    color:white;
+
+}
+
+.btn-blacklist{
+
+    background:#EF4444;
+
+    color:white;
+
+}
+
+.admin-actions button:hover{
+
+    transform:
+    translateY(-2px);
+
+}
