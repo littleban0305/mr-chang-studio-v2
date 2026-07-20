@@ -254,5 +254,20 @@ fetch(
         ).textContent =
         data.length;
 
+        document.getElementById(
+            "vipTitle"
+        ).textContent =
+        `👑 VIP會員 (${vipCount})`;
+        
+        document.getElementById(
+            "normalTitle"
+        ).textContent =
+        `👤 普通會員 (${normalCount})`;
+        
+        document.getElementById(
+            "blacklistTitle"
+        ).textContent =
+        `🚫 黑名單 (${blacklistCount})`;
+
     }
 );
