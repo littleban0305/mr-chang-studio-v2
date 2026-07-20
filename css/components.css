@@ -1130,3 +1130,29 @@
     font-size:1rem;
 
 }
+
+.booking-card summary{
+
+    cursor:pointer;
+
+    font-size:1.1rem;
+
+    font-weight:700;
+
+    padding:10px;
+
+    list-style:none;
+
+}
+
+.booking-card summary::-webkit-details-marker{
+
+    display:none;
+
+}
+
+.booking-detail{
+
+    margin-top:15px;
+
+}
