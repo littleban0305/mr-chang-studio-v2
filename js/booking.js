@@ -112,6 +112,24 @@ if(bookBtn){
         "click",
         ()=>{
 
+            const memberName =
+            localStorage.getItem(
+                "memberName"
+            );
+            
+            if(!memberName){
+            
+                alert(
+                    "請先完成會員資料"
+                );
+            
+                window.location.href =
+                "complete-profile.html";
+            
+                return;
+            
+            }
+
             if(!selectedSlot){
 
                 alert(
