@@ -103,13 +103,22 @@ fetch(
         rows.shift();
 
         rows.forEach(
-            slot=>{
+            row=>{
 
-                slot =
-                slot.trim();
+                row =
+                row.trim();
 
-                if(!slot)
+                if(!row)
                 return;
+
+                const data =
+                row.split(",");
+
+                const slot =
+                data[0]?.trim();
+
+                const status =
+                data[1]?.trim();
 
                 const btn =
                 document.createElement(
@@ -119,8 +128,27 @@ fetch(
                 btn.className =
                 "slot-btn";
 
-                btn.textContent =
-                slot;
+                if(
+                    status === "full"
+                ){
+
+                    btn.textContent =
+                    `${slot}（已額滿）`;
+
+                    btn.disabled =
+                    true;
+
+                    btn.style.opacity =
+                    "0.5";
+
+                }
+
+                else{
+
+                    btn.textContent =
+                    slot;
+
+                }
 
                 slotList.appendChild(
                     btn
