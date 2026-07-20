@@ -1451,29 +1451,6 @@ summary:hover{
 
 }
 
-.dashboard-card{
-
-    background:white;
-
-    border-radius:24px;
-
-    padding:25px;
-
-    text-align:center;
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.08);
-
-}
-
-.dashboard-card h3{
-
-    font-size:2rem;
-
-    color:#0ABAB5;
-
-}
-
 .admin-page{
 
     max-width:1200px;
