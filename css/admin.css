@@ -1,0 +1,281 @@
+/* ===== Admin V3 ===== */
+
+.admin-page{
+
+    max-width:900px;
+
+    margin:20px auto;
+
+    padding:15px;
+
+}
+
+.admin-header{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+.admin-header h1{
+
+    font-size:1.8rem;
+
+    margin-bottom:5px;
+
+}
+
+.admin-header p{
+
+    font-size:.85rem;
+
+    color:#6B7280;
+
+}
+
+.admin-dashboard{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:10px;
+
+    margin-bottom:15px;
+
+}
+
+.dashboard-card{
+
+    background:white;
+
+    padding:10px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    box-shadow:
+    0 2px 8px rgba(0,0,0,.06);
+
+}
+
+.dashboard-card h3{
+
+    font-size:1rem;
+
+    margin:0;
+
+    color:#0ABAB5;
+
+}
+
+.dashboard-card p{
+
+    font-size:.7rem;
+
+    margin-top:4px;
+
+    color:#6B7280;
+
+}
+
+.admin-section{
+
+    background:white;
+
+    border-radius:12px;
+
+    margin-bottom:12px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 2px 8px rgba(0,0,0,.06);
+
+}
+
+.admin-section summary{
+
+    padding:12px 15px;
+
+    font-size:.9rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+.admin-member{
+
+    margin:10px;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    border:
+    1px solid #E5E7EB;
+
+}
+
+.admin-member summary{
+
+    padding:10px 14px;
+
+    font-size:.85rem;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0ABAB5,
+        #55D6D1
+    );
+
+    color:white;
+
+}
+
+.admin-content{
+
+    padding:10px;
+
+}
+
+.admin-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(
+            180px,
+            1fr
+        )
+    );
+
+    gap:8px;
+
+}
+
+.admin-item{
+
+    background:#F8FAFC;
+
+    border-radius:8px;
+
+    padding:8px;
+
+}
+
+.admin-item span{
+
+    display:block;
+
+    font-size:.65rem;
+
+    color:#6B7280;
+
+    margin-bottom:4px;
+
+}
+
+.admin-item strong{
+
+    font-size:.8rem;
+
+}
+
+.admin-actions{
+
+    display:flex;
+
+    gap:8px;
+
+    margin-top:10px;
+
+}
+
+.admin-actions button{
+
+    border:none;
+
+    border-radius:8px;
+
+    padding:6px 10px;
+
+    font-size:.75rem;
+
+    cursor:pointer;
+
+}
+
+.vip-tag{
+
+    background:#F59E0B;
+
+    padding:4px 8px;
+
+    border-radius:999px;
+
+    font-size:.7rem;
+
+}
+
+.normal-tag{
+
+    background:#0ABAB5;
+
+    padding:4px 8px;
+
+    border-radius:999px;
+
+    font-size:.7rem;
+
+}
+
+.blacklist-tag{
+
+    background:#EF4444;
+
+    padding:4px 8px;
+
+    border-radius:999px;
+
+    font-size:.7rem;
+
+}
+
+.btn-confirm{
+
+    background:#10B981;
+
+    color:white;
+
+}
+
+.btn-wait{
+
+    background:#F59E0B;
+
+    color:white;
+
+}
+
+.btn-blacklist{
+
+    background:#EF4444;
+
+    color:white;
+
+}
