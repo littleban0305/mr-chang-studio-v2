@@ -154,6 +154,20 @@ if(bookBtn){
                     "memberName"
                 )
             );
+
+            formData.append(
+                "phone",
+                localStorage.getItem(
+                    "memberPhone"
+                )
+            );
+            
+            formData.append(
+                "birthday",
+                localStorage.getItem(
+                    "memberBirthday"
+                )
+            );
             
             formData.append(
                 "slot",
