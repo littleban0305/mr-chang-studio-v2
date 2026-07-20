@@ -127,84 +127,76 @@ if(bookBtn){
                 "bookingNote"
             ).value;
 
-            const bookingData = {
-
-                name:
+            const formData =
+            new URLSearchParams();
+            
+            formData.append(
+                "name",
                 localStorage.getItem(
                     "memberName"
-                ),
-
-                slot:
-                selectedSlot,
-
-                note:
+                )
+            );
+            
+            formData.append(
+                "slot",
+                selectedSlot
+            );
+            
+            formData.append(
+                "note",
                 bookingNote
-
-            };
-
+            );
+            
             fetch(
                 "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec",
                 {
-
+            
                     method:"POST",
-
-                    headers:{
-                        "Content-Type":
-                        "application/json"
-                    },
-
-                    body:
-                    JSON.stringify(
-                        bookingData
-                    )
-
+            
+                    body:formData
+            
                 }
             )
             .then(
-                response=>response.json()
+                response=>response.text()
             )
             .then(
                 data=>{
-
+            
                     localStorage.setItem(
                         "bookingDate",
                         selectedSlot
                     );
-
+            
                     localStorage.setItem(
                         "bookingNote",
                         bookingNote
                     );
-
+            
                     localStorage.setItem(
                         "bookingCreatedAt",
                         new Date().toISOString()
                     );
-
+            
                     alert(
                         "預約成功！"
                     );
-
+            
                     window.location.href =
                     "my-bookings.html";
-
+            
                 }
             )
             .catch(
                 error=>{
-
+            
                     console.error(
                         error
                     );
-
+            
                     alert(
                         "預約失敗"
                     );
-
+            
                 }
             );
-
-        }
-    );
-
-}
