@@ -164,6 +164,10 @@ if(bookBtn){
                 "note",
                 bookingNote
             );
+
+            console.log(
+                selectedSlot
+            );
             
             fetch(
                 "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec",
