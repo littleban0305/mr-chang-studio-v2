@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        我的預約｜Mr. Chang
+    </title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <img
+            src="assets/logo1.png"
+            class="nav-logo"
+            alt="Mr. Chang">
+
+        <button id="menuBtn">
+            ☰
+        </button>
+
+    </nav>
+
+    <div
+        id="mobileMenu"
+        class="mobile-menu">
+    </div>
+
+    <main class="profile-page">
+
+        <a
+            href="profile.html"
+            class="back-home">
+
+            ← 返回會員中心
+
+        </a>
+
+        <h1>
+            我的預約
+        </h1>
+
+        <div class="booking-record">
+        
+            <div class="booking-card">
+        
+                <div class="booking-header">
+        
+                    預約資訊
+        
+                </div>
+        
+                <div class="info-item">
+        
+                    <span class="info-label">
+                        預約日期
+                    </span>
+        
+                    <span id="bookingDate">
+        
+                        尚未預約
+        
+                    </span>
+        
+                </div>
+
+                <div class="info-item">
+                
+                    <span class="info-label">
+                
+                        其他需求
+                
+                    </span>
+                
+                    <span id="bookingNote">
+                
+                        無
+                
+                    </span>
+                
+                </div>
+        
+                <div class="info-item">
+        
+                    <span class="info-label">
+                        預約狀態
+                    </span>
+
+                    <span id="bookingStatus">
+
+                        等待確認
+
+                    </span>
+        
+                </div>
+
+                <div class="info-item">
+                
+                    <span class="info-label">
+                
+                        送出時間
+                
+                    </span>
+                
+                    <span id="bookingCreatedAt">
+                
+                        尚無資料
+                
+                    </span>
+                
+                </div>
+        
+            </div>
+        
+        </div>
+
+        <button
+            id="cancelBookingBtn"
+            class="logout-btn">
+
+            ❌ 取消預約
+
+        </button>
+
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/my-bookings.js"></script>
+
+</body>
+
+</html>

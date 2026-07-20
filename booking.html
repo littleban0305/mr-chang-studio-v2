@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        預約系統｜Mr. Chang
+    </title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <img
+            src="assets/logo1.png"
+            class="nav-logo"
+            alt="Mr. Chang">
+
+        <button id="menuBtn">
+            ☰
+        </button>
+
+    </nav>
+
+    <div
+        id="mobileMenu"
+        class="mobile-menu">
+    </div>
+
+    <main class="booking-page">
+
+        <div class="booking-card">
+
+            <a
+                href="profile.html"
+                class="back-home">
+
+                ← 返回會員中心
+
+            </a>
+
+            <img
+                src="assets/logo1.png"
+                class="auth-logo"
+                alt="Mr. Chang">
+
+            <h1>
+                預約系統
+            </h1>
+            
+            <div class="booking-notice">
+            
+                <p>
+                    請選擇欲預約日期和時間。
+                </p>
+            
+            </div>
+            
+            <div class="slot-list">
+            
+                <button class="slot-btn">
+                    8/15 08:00
+                </button>
+            
+                <button class="slot-btn">
+                    8/15 09:00
+                </button>
+            
+                <button class="slot-btn">
+                    8/15 10:00
+                </button>
+            
+                <button class="slot-btn">
+                    8/15 14:00
+                </button>
+            
+                <button class="slot-btn">
+                    8/16 09:00
+                </button>
+            
+                <button class="slot-btn">
+                    8/16 10:00
+                </button>
+            
+            </div>
+
+            <label>
+                其他需求／候補時段（選填）
+            </label>
+            
+            <textarea
+                id="bookingNote"
+                rows="4"
+                placeholder="例如：8/16 09:00也可以，或平日下午皆可">
+            </textarea>
+            
+            <button
+                id="bookBtn"
+                class="primary-btn">
+            
+                送出預約
+            
+            </button>
+
+        </div>
+
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/booking.js"></script>
+
+</body>
+
+</html>

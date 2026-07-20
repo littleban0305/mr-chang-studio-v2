@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        管理員後台
+    </title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+
+</head>
+
+<body>
+
+    <main class="profile-page">
+
+        <h1>
+            管理員後台
+        </h1>
+
+        <div class="booking-card">
+        
+            <h3>
+                新增開放時段
+            </h3>
+        
+            <input
+                type="date"
+                id="slotDate">
+        
+            <br><br>
+        
+            <input
+                type="time"
+                id="slotTime">
+        
+            <br><br>
+        
+            <button
+                id="addSlotBtn"
+                class="primary-btn">
+        
+                新增時段
+        
+            </button>
+        
+        </div>
+        
+        <br>
+
+        <div class="booking-card">
+        
+            <div class="info-item">
+        
+                <span>
+                    姓名
+                </span>
+        
+                <span id="adminName">
+        
+                    尚無資料
+        
+                </span>
+        
+            </div>
+        
+            <div class="info-item">
+        
+                <span>
+                    電話
+                </span>
+        
+                <span id="adminPhone">
+        
+                    尚無資料
+        
+                </span>
+        
+            </div>
+        
+            <div class="info-item">
+        
+                <span>
+                    生日
+                </span>
+        
+                <span id="adminBirthday">
+        
+                    尚無資料
+        
+                </span>
+        
+            </div>
+        
+        </div>
+        
+        <br>
+
+        <div class="booking-card">
+
+            <div class="info-item">
+
+                <span>
+                    預約日期
+                </span>
+
+                <span id="adminBookingDate">
+
+                    尚無資料
+
+                </span>
+
+            </div>
+
+            <div class="info-item">
+            
+                <span>
+            
+                    送出時間
+            
+                </span>
+            
+                <span id="adminBookingTime">
+            
+                    尚無資料
+            
+                </span>
+            
+            </div>
+
+            <div class="info-item">
+            
+                <span>
+            
+                    其他需求
+            
+                </span>
+            
+                <span id="adminBookingNote">
+            
+                    無
+            
+                </span>
+            
+            </div>
+
+            <div class="info-item">
+
+                <span>
+                    狀態
+                </span>
+
+                <span id="adminStatus">
+
+                    等待確認
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <button
+            id="confirmBtn"
+            class="primary-btn">
+
+            確認預約
+
+        </button>
+
+        <br><br>
+
+        <button
+            id="waitingBtn"
+            class="secondary-btn">
+
+            轉入候補
+
+        </button>
+
+        <br><br>
+
+        <button
+            id="cancelBtn"
+            class="logout-btn">
+
+            取消預約
+
+        </button>
+
+    </main>
+
+    <script src="js/admin.js"></script>
+
+</body>
+
+</html>
