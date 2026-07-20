@@ -123,7 +123,9 @@ fetch(
                 
                     <div class="admin-actions">
                 
-                        <button class="btn-confirm">
+                        <button
+                            class="btn-confirm"
+                            data-name="${booking.name}">
                             確認預約
                         </button>
                 
@@ -140,6 +142,46 @@ fetch(
                 </div>
                 
                 `;
+
+                const confirmBtn =
+                details.querySelector(
+                    ".btn-confirm"
+                );
+                
+                confirmBtn.addEventListener(
+                    "click",
+                    ()=>{
+                
+                        fetch(
+                
+                            "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec"
+                            +
+                            "?action=updateStatus"
+                            +
+                            "&name="
+                            +
+                            encodeURIComponent(
+                                booking.name
+                            )
+                            +
+                            "&status=已確認"
+                
+                        )
+                
+                        .then(
+                            ()=>{
+                
+                                alert(
+                                    "預約已確認"
+                                );
+                
+                                location.reload();
+                
+                            }
+                        );
+                
+                    }
+                );
 
                 if(
                     booking.memberType
