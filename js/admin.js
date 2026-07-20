@@ -1,299 +1,117 @@
-const memberName =
-localStorage.getItem(
-    "memberName"
-);
-
-const memberPhone =
-localStorage.getItem(
-    "memberPhone"
-);
-
-const memberBirthday =
-localStorage.getItem(
-    "memberBirthday"
-);
-
-const adminName =
+const vipSection =
 document.getElementById(
-    "adminName"
+    "vipSection"
 );
 
-const adminPhone =
+const normalSection =
 document.getElementById(
-    "adminPhone"
+    "normalSection"
 );
 
-const adminBirthday =
+const blacklistSection =
 document.getElementById(
-    "adminBirthday"
+    "blacklistSection"
 );
 
-if(
-    memberName &&
-    adminName
-){
-
-    adminName.textContent =
-    memberName;
-
-}
-
-if(
-    memberPhone &&
-    adminPhone
-){
-
-    adminPhone.textContent =
-    memberPhone;
-
-}
-
-if(
-    memberBirthday &&
-    adminBirthday
-){
-
-    adminBirthday.textContent =
-    memberBirthday;
-
-}
-
-if(
-    !localStorage.getItem(
-        "isAdmin"
-    )
-){
-
-    location.href =
-    "admin-login.html";
-
-}
-
-const bookingDate =
-localStorage.getItem(
-    "bookingDate"
-);
-
-const bookingDateText =
-document.getElementById(
-    "adminBookingDate"
-);
-
-if(
-    bookingDate &&
-    bookingDateText
-){
-
-    bookingDateText.textContent =
-    bookingDate;
-
-}
-
-const statusText =
-document.getElementById(
-    "adminStatus"
-);
-
-const currentStatus =
-localStorage.getItem(
-    "bookingStatus"
-);
-
-if(
-    currentStatus &&
-    statusText
-){
-
-    statusText.textContent =
-    currentStatus;
-
-}
-
-document
-.getElementById(
-    "confirmBtn"
+fetch(
+    "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec"
 )
-.addEventListener(
-    "click",
-    ()=>{
-
-        statusText.textContent =
-        "已確認";
-
-        localStorage.setItem(
-            "bookingStatus",
-            "已確認"
-        );
-
-        alert(
-            "已確認預約"
-        );
-
-    }
-);
-
-document
-.getElementById(
-    "waitingBtn"
+.then(
+    response=>response.json()
 )
-.addEventListener(
-    "click",
-    ()=>{
+.then(
+    data=>{
 
-        statusText.textContent =
-        "候補中";
+        data.forEach(
+            booking=>{
 
-        localStorage.setItem(
-            "bookingStatus",
-            "候補中"
-        );
-
-        alert(
-            "已轉入候補"
-        );
-
-    }
-);
-
-document
-.getElementById(
-    "cancelBtn"
-)
-.addEventListener(
-    "click",
-    ()=>{
-
-        statusText.textContent =
-        "已取消";
-
-        localStorage.setItem(
-            "bookingStatus",
-            "已取消"
-        );
-
-        alert(
-            "已取消預約"
-        );
-
-    }
-);
-
-const bookingCreatedAt =
-localStorage.getItem(
-    "bookingCreatedAt"
-);
-
-const adminBookingTime =
-document.getElementById(
-    "adminBookingTime"
-);
-
-if(
-    bookingCreatedAt &&
-    adminBookingTime
-){
-
-    const date =
-    new Date(
-        bookingCreatedAt
-    );
-
-    adminBookingTime.textContent =
-    date.toLocaleString(
-        "zh-TW",
-        {
-            year:"numeric",
-            month:"2-digit",
-            day:"2-digit",
-            hour:"2-digit",
-            minute:"2-digit",
-            second:"2-digit",
-            fractionalSecondDigits:3
-        }
-    );
-
-}
-
-const addSlotBtn =
-document.getElementById(
-    "addSlotBtn"
-);
-
-if(addSlotBtn){
-
-    addSlotBtn.addEventListener(
-        "click",
-        ()=>{
-
-            const date =
-            document.getElementById(
-                "slotDate"
-            ).value;
-
-            const time =
-            document.getElementById(
-                "slotTime"
-            ).value;
-
-            if(
-                !date ||
-                !time
-            ){
-
-                alert(
-                    "請選擇日期與時間"
+                const details =
+                document.createElement(
+                    "details"
                 );
 
-                return;
+                const summary =
+                document.createElement(
+                    "summary"
+                );
+
+                summary.textContent =
+                booking.name;
+
+                details.appendChild(
+                    summary
+                );
+
+                details.innerHTML += `
+                <div class="booking-card">
+
+                    <p>
+                        📞 ${booking.phone}
+                    </p>
+
+                    <p>
+                        🎂 ${booking.birthday}
+                    </p>
+
+                    <p>
+                        📅 ${booking.slot}
+                    </p>
+
+                    <p>
+                        📝 ${booking.note}
+                    </p>
+
+                    <p>
+                        ⏰ ${booking.createdAt}
+                    </p>
+
+                    <p>
+                        📌 ${booking.status}
+                    </p>
+
+                    <p>
+                        💬 ${booking.memberNote}
+                    </p>
+
+                </div>
+                `;
+
+                if(
+                    booking.memberType
+                    ===
+                    "VIP"
+                ){
+
+                    vipSection.appendChild(
+                        details
+                    );
+
+                }
+
+                else if(
+                    booking.memberType
+                    ===
+                    "黑名單"
+                ){
+
+                    blacklistSection
+                    .appendChild(
+                        details
+                    );
+
+                }
+
+                else{
+
+                    normalSection
+                    .appendChild(
+                        details
+                    );
+
+                }
 
             }
+        );
 
-            const slot =
-            `${date} ${time}`;
-
-            const slots =
-            JSON.parse(
-                localStorage.getItem(
-                    "bookingSlots"
-                )
-            ) || [];
-
-            slots.push(
-                slot
-            );
-
-            localStorage.setItem(
-                "bookingSlots",
-                JSON.stringify(
-                    slots
-                )
-            );
-
-            alert(
-                "新增成功"
-            );
-
-        }
-    );
-
-}
-
-const bookingNote =
-localStorage.getItem(
-    "bookingNote"
+    }
 );
-
-const adminBookingNote =
-document.getElementById(
-    "adminBookingNote"
-);
-
-if(
-    bookingNote &&
-    adminBookingNote
-){
-
-    adminBookingNote.textContent =
-    bookingNote;
-
-}
