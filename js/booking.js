@@ -117,6 +117,51 @@ if(bookBtn){
                 "memberName"
             );
             
+            fetch(
+            
+                "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec"
+                +
+            
+                "?action=checkBooking"
+            
+                +
+            
+                "&name="
+            
+                +
+            
+                encodeURIComponent(
+                    memberName
+                )
+            
+            )
+            .then(
+                response=>response.text()
+            )
+            .then(
+                result=>{
+            
+                    if(
+                        result
+                        ===
+                        "exists"
+                    ){
+            
+                        alert(
+                            "您已有一筆預約尚未完成"
+                        );
+            
+                        return;
+            
+                    }
+            
+                    // 原本送出預約程式碼放這裡
+
+            const memberName =
+            localStorage.getItem(
+                "memberName"
+            );
+            
             if(!memberName){
             
                 alert(
