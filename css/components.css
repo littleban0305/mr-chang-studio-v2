@@ -1210,7 +1210,7 @@ details{
 
     align-items:center;
 
-    padding:20px;
+    padding:14px 18px;
 
     background:
     linear-gradient(
@@ -1244,7 +1244,7 @@ details{
 
 .admin-content{
 
-    padding:25px;
+    padding:15px;
 
     background:white;
 
@@ -1523,5 +1523,33 @@ details{
     box-shadow:
     0 12px 35px
     rgba(0,0,0,.12);
+
+}
+
+.admin-section{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:15px;
+
+    margin-bottom:20px;
+
+    box-shadow:
+    0 4px 12px
+    rgba(0,0,0,.05);
+
+}
+
+.admin-section summary{
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    list-style:none;
 
 }
