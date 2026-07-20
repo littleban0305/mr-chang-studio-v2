@@ -1156,3 +1156,13 @@
     margin-top:15px;
 
 }
+
+.slot-btn:disabled{
+
+    background:#9CA3AF;
+
+    color:white;
+
+    cursor:not-allowed;
+
+}
