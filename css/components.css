@@ -1227,6 +1227,12 @@ details{
 
 }
 
+.admin-member summary:hover{
+
+    opacity:.92;
+
+}
+
 .admin-member[open] summary{
 
     border-bottom:
@@ -1494,5 +1500,20 @@ details{
     color:#0ABAB5;
 
     margin-bottom:8px;
+
+}
+
+.admin-member{
+
+    border:1px solid
+    rgba(255,255,255,.15);
+
+}
+
+.admin-member[open]{
+
+    box-shadow:
+    0 12px 35px
+    rgba(0,0,0,.12);
 
 }
