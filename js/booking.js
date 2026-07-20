@@ -3,90 +3,12 @@ document.getElementById(
     "slotList"
 );
 
-const slotButtons =
-document.querySelectorAll(
-    ".slot-btn"
-);
-
 let selectedSlot = null;
-
-slotButtons.forEach(btn => {
-
-    btn.addEventListener(
-        "click",
-        ()=>{
-
-            slotButtons.forEach(
-                b => b.classList.remove(
-                    "selected"
-                )
-            );
-
-            btn.classList.add(
-                "selected"
-            );
-
-            selectedSlot =
-            btn.textContent.trim();
-
-        }
-    );
-
-});
 
 const bookBtn =
 document.getElementById(
     "bookBtn"
 );
-
-if(bookBtn){
-
-    bookBtn.addEventListener(
-        "click",
-        ()=>{
-
-            if(!selectedSlot){
-
-                alert(
-                    "請先選擇時段"
-                );
-
-                return;
-
-            }
-
-            const bookingNote =
-            document.getElementById(
-                "bookingNote"
-            ).value;
-
-            localStorage.setItem(
-                "bookingDate",
-                selectedSlot
-            );
-
-            localStorage.setItem(
-                "bookingNote",
-                bookingNote
-            );
-
-            const now =
-            new Date();
-            
-            localStorage.setItem(
-                "bookingCreatedAt",
-                now.toISOString()
-            );
-            
-            
-
-            window.location.href =
-            "my-bookings.html";
-
-        }
-    );
-
-}
 
 fetch(
     "https://docs.google.com/spreadsheets/d/1PW_TBPUWeXncwL5G1tDG_qktHC7ChWd0AekIqHq6QSQ/export?format=csv&gid=0"
@@ -148,6 +70,30 @@ fetch(
                     btn.textContent =
                     slot;
 
+                    btn.addEventListener(
+                        "click",
+                        ()=>{
+
+                            document
+                            .querySelectorAll(
+                                ".slot-btn"
+                            )
+                            .forEach(
+                                b=>b.classList.remove(
+                                    "selected"
+                                )
+                            );
+
+                            btn.classList.add(
+                                "selected"
+                            );
+
+                            selectedSlot =
+                            slot;
+
+                        }
+                    );
+
                 }
 
                 slotList.appendChild(
@@ -159,3 +105,106 @@ fetch(
 
     }
 );
+
+if(bookBtn){
+
+    bookBtn.addEventListener(
+        "click",
+        ()=>{
+
+            if(!selectedSlot){
+
+                alert(
+                    "請先選擇時段"
+                );
+
+                return;
+
+            }
+
+            const bookingNote =
+            document.getElementById(
+                "bookingNote"
+            ).value;
+
+            const bookingData = {
+
+                name:
+                localStorage.getItem(
+                    "memberName"
+                ),
+
+                slot:
+                selectedSlot,
+
+                note:
+                bookingNote
+
+            };
+
+            fetch(
+                "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec",
+                {
+
+                    method:"POST",
+
+                    headers:{
+                        "Content-Type":
+                        "application/json"
+                    },
+
+                    body:
+                    JSON.stringify(
+                        bookingData
+                    )
+
+                }
+            )
+            .then(
+                response=>response.json()
+            )
+            .then(
+                data=>{
+
+                    localStorage.setItem(
+                        "bookingDate",
+                        selectedSlot
+                    );
+
+                    localStorage.setItem(
+                        "bookingNote",
+                        bookingNote
+                    );
+
+                    localStorage.setItem(
+                        "bookingCreatedAt",
+                        new Date().toISOString()
+                    );
+
+                    alert(
+                        "預約成功！"
+                    );
+
+                    window.location.href =
+                    "my-bookings.html";
+
+                }
+            )
+            .catch(
+                error=>{
+
+                    console.error(
+                        error
+                    );
+
+                    alert(
+                        "預約失敗"
+                    );
+
+                }
+            );
+
+        }
+    );
+
+}
