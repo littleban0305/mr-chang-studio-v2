@@ -22,6 +22,12 @@ fetch(
 .then(
     data=>{
 
+        let vipCount = 0;
+
+        let normalCount = 0;
+
+        let blacklistCount = 0;
+
         data.forEach(
             booking=>{
 
@@ -41,6 +47,8 @@ fetch(
                     ===
                     "VIP"
                 ){
+
+                    vipCount++;
                 
                     tagClass =
                     "vip-tag";
@@ -52,6 +60,8 @@ fetch(
                     ===
                     "黑名單"
                 ){
+
+                    blacklistCount++;
                 
                     tagClass =
                     "blacklist-tag";
