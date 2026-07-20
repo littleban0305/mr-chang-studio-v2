@@ -152,31 +152,43 @@ fetch(
                     "click",
                     ()=>{
                 
+                        const formData =
+                        new URLSearchParams();
+                        
+                        formData.append(
+                            "action",
+                            "updateStatus"
+                        );
+                        
+                        formData.append(
+                            "name",
+                            booking.name
+                        );
+                        
+                        formData.append(
+                            "status",
+                            "已確認"
+                        );
+                        
                         fetch(
-                
-                            "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec"
-                            +
-                            "?action=updateStatus"
-                            +
-                            "&name="
-                            +
-                            encodeURIComponent(
-                                booking.name
-                            )
-                            +
-                            "&status=已確認"
-                
+                            "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec",
+                            {
+                        
+                                method:"POST",
+                        
+                                body:formData
+                        
+                            }
                         )
-                
                         .then(
                             ()=>{
-                
+                        
                                 alert(
                                     "預約已確認"
                                 );
-                
+                        
                                 location.reload();
-                
+                        
                             }
                         );
                 
