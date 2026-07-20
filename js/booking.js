@@ -142,9 +142,7 @@ if(bookBtn){
                 result=>{
             
                     if(
-                        result
-                        ===
-                        "exists"
+                        result === "exists"
                     ){
             
                         alert(
@@ -155,12 +153,7 @@ if(bookBtn){
             
                     }
             
-                    // 原本送出預約程式碼放這裡
-
-            const memberName =
-            localStorage.getItem(
-                "memberName"
-            );
+                    // 開始送出預約
             
             if(!memberName){
             
@@ -284,8 +277,12 @@ if(bookBtn){
 
         } // result=>{
 
-    } // .then(result=>...)
+    } // then 的 callback
 
-); // click
+); // .then()
 
-}
+        } // click
+
+    ); // addEventListener
+
+} // if(bookBtn)
