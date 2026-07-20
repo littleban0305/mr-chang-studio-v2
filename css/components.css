@@ -1166,3 +1166,29 @@
     cursor:not-allowed;
 
 }
+
+details{
+
+    margin-bottom:12px;
+
+}
+
+summary{
+
+    cursor:pointer;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    background:#1f1f1f;
+
+    font-weight:bold;
+
+}
+
+summary:hover{
+
+    opacity:.85;
+
+}
