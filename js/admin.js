@@ -178,5 +178,20 @@ fetch(
             }
         );
 
+        document.getElementById(
+            "vipCount"
+        ).textContent =
+        vipCount;
+        
+        document.getElementById(
+            "normalCount"
+        ).textContent =
+        normalCount;
+        
+        document.getElementById(
+            "totalBookings"
+        ).textContent =
+        data.length;
+
     }
 );
