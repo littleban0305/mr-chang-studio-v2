@@ -270,18 +270,22 @@ if(bookBtn){
             )
             .catch(
                 error=>{
-            
+
                     console.error(
                         error
                     );
-            
+
                     alert(
                         "預約失敗"
                     );
-            
+
                 }
             );
-        }
-    );
+
+        } // result=>{
+
+    } // .then(result=>...)
+
+); // click
 
 }
