@@ -37,9 +37,10 @@ function handleCredentialResponse(
 
     const payload =
     JSON.parse(
-        decodeURIComponent(
-            escape(
-                atob(base64)
+        new TextDecoder().decode(
+            Uint8Array.from(
+                atob(base64),
+                c=>c.charCodeAt(0)
             )
         )
     );
