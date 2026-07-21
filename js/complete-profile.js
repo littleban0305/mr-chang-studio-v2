@@ -101,6 +101,11 @@ saveBtn.addEventListener(
                     birthday
                 );
 
+                localStorage.setItem(
+                    "isLogin",
+                    "true"
+                );
+
                 alert(
                     "會員資料已完成"
                 );
