@@ -103,8 +103,9 @@ function checkMember(
                 result === "exists"
             ){
 
-                window.location.href =
-                "profile.html";
+                loadMemberData(
+                    payload.email
+                );
 
             }
 
@@ -114,6 +115,50 @@ function checkMember(
                 "complete-profile.html";
 
             }
+
+        }
+    );
+
+}
+
+function loadMemberData(
+    email
+){
+
+    fetch(
+        "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec"
+        +
+        "?action=getMember"
+        +
+        "&email="
+        +
+        encodeURIComponent(
+            email
+        )
+    )
+    .then(
+        response=>response.json()
+    )
+    .then(
+        member=>{
+
+            localStorage.setItem(
+                "memberName",
+                member.name
+            );
+
+            localStorage.setItem(
+                "memberPhone",
+                member.phone
+            );
+
+            localStorage.setItem(
+                "memberBirthday",
+                member.birthday
+            );
+
+            window.location.href =
+            "profile.html";
 
         }
     );
