@@ -386,6 +386,8 @@ function sendBooking(){
     .catch(
         error=>{
 
+            hideLoading();
+
             console.error(
                 error
             );
