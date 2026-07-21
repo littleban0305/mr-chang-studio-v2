@@ -139,40 +139,6 @@ fetch(
 
 function submitBooking(){
 
-    fetch(
-        "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec"
-        +
-        "?action=checkBooking"
-        +
-        "&name="
-        +
-        encodeURIComponent(
-            memberName
-        )
-    )
-    .then(
-        response=>response.text()
-    )
-    .then(
-        result=>{
-    
-            if(
-                result === "exists"
-            ){
-    
-                alert(
-                    "❌ 您本月已經預約過一次了"
-                );
-    
-                return;
-    
-            }
-    
-            sendBooking();
-    
-        }
-    );
-
     const memberName =
     localStorage.getItem(
         "memberName"
@@ -200,6 +166,77 @@ function submitBooking(){
         return;
 
     }
+
+    fetch(
+        "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec"
+        +
+        "?action=checkBooking"
+        +
+        "&name="
+        +
+        encodeURIComponent(
+            memberName
+        )
+    )
+    .then(
+        response=>response.text()
+    )
+    .then(
+        result=>{
+
+            if(
+                result === "exists"
+            ){
+
+                alert(
+                    "❌ 您本月已經預約過一次了"
+                );
+
+                return;
+
+            }
+
+            sendBooking();
+
+        }
+    );
+
+}
+
+if(
+    confirmBookingBtn
+){
+
+    confirmBookingBtn
+    .addEventListener(
+        "click",
+        submitBooking
+    );
+
+}
+
+if(
+    modalOverlay
+){
+
+    modalOverlay.addEventListener(
+        "click",
+        ()=>{
+
+            modal.classList.remove(
+                "show"
+            );
+
+            modalOverlay.classList.remove(
+                "show"
+            );
+
+        }
+    );
+
+}
+
+function sendBooking(){
 
     const bookingNote =
     modalBookingNote.value;
@@ -292,39 +329,6 @@ function submitBooking(){
 
             alert(
                 "預約失敗"
-            );
-
-        }
-    );
-
-}
-
-if(
-    confirmBookingBtn
-){
-
-    confirmBookingBtn
-    .addEventListener(
-        "click",
-        submitBooking
-    );
-
-}
-
-if(
-    modalOverlay
-){
-
-    modalOverlay.addEventListener(
-        "click",
-        ()=>{
-
-            modal.classList.remove(
-                "show"
-            );
-
-            modalOverlay.classList.remove(
-                "show"
             );
 
         }
