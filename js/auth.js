@@ -63,6 +63,11 @@ function handleCredentialResponse(
     );
 
     localStorage.setItem(
+        "isLogin",
+        "true"
+    );
+
+    localStorage.setItem(
         "memberGoogleName",
         payload.name
     );
