@@ -312,6 +312,13 @@ function sendBooking(){
     new URLSearchParams();
 
     formData.append(
+        "email",
+        localStorage.getItem(
+            "memberEmail"
+        )
+    );
+
+    formData.append(
         "name",
         localStorage.getItem(
             "memberName"
