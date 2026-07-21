@@ -71,7 +71,7 @@ function updateBookingButton(){
         
             bookingBtn.innerHTML =
             `
-            開放倒數<br>
+            下一次開放預約剩餘<br>
             ${days}天 ${hours}小時
             `;
         
@@ -80,7 +80,7 @@ function updateBookingButton(){
         
             bookingBtn.innerHTML =
             `
-            開放倒數<br>
+            預約開放倒數<br>
             ${hours}小時 ${minutes}分 ${seconds}秒
             `;
         
