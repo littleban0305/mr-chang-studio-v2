@@ -22,6 +22,11 @@ saveBtn.addEventListener(
             "memberBirthday"
         ).value;
 
+        const email =
+        localStorage.getItem(
+            "memberEmail"
+        );
+
         if(
             !name ||
             !phone ||
@@ -36,27 +41,71 @@ saveBtn.addEventListener(
 
         }
 
-        localStorage.setItem(
-            "memberName",
+        const formData =
+        new URLSearchParams();
+
+        formData.append(
+            "action",
+            "registerMember"
+        );
+
+        formData.append(
+            "email",
+            email
+        );
+
+        formData.append(
+            "name",
             name
         );
 
-        localStorage.setItem(
-            "memberPhone",
+        formData.append(
+            "phone",
             phone
         );
 
-        localStorage.setItem(
-            "memberBirthday",
+        formData.append(
+            "birthday",
             birthday
         );
 
-        alert(
-            "會員資料已完成"
-        );
+        fetch(
+            "你的AppsScript網址",
+            {
+                method:"POST",
+                body:formData
+            }
+        )
+        .then(
+            response=>response.text()
+        )
+        .then(
+            ()=>{
 
-        location.href =
-        "profile.html";
+                localStorage.setItem(
+                    "memberName",
+                    name
+                );
+
+                localStorage.setItem(
+                    "memberPhone",
+                    phone
+                );
+
+                localStorage.setItem(
+                    "memberBirthday",
+                    birthday
+                );
+
+                alert(
+                    "會員資料已完成"
+                );
+
+                location.href =
+                "profile.html";
+
+            }
+        );
 
     }
 );
