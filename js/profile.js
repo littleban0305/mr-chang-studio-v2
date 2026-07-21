@@ -1,3 +1,16 @@
+if(
+
+    localStorage.getItem(
+        "isLogin"
+    ) !== "true"
+
+){
+
+    location.href =
+    "login.html";
+
+}
+
 const memberName =
 localStorage.getItem(
     "memberName"
@@ -78,5 +91,14 @@ if(logoutBtn){
 
         }
     );
+
+}
+
+function logout(){
+
+    localStorage.clear();
+
+    location.href =
+    "index.html";
 
 }
