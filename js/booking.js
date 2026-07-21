@@ -86,7 +86,7 @@ fetch(
                 ){
 
                     btn.textContent =
-                    `${slot}（已額滿）`;
+                    `${time}（已額滿）`;
 
                     btn.disabled =
                     true;
