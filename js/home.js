@@ -3,14 +3,33 @@ document.getElementById(
     "bookingEntryBtn"
 );
 
-const startTime =
-new Date(
-    "2026-07-21T11:06:00"
-);
+fetch(
+    "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec?action=settings"
+)
+.then(
+    response=>response.json()
+)
+.then(
+    settings=>{
 
-const endTime =
-new Date(
-    "2026-08-15T23:59:00"
+        startTime =
+        new Date(
+            settings.bookingStart
+        );
+
+        endTime =
+        new Date(
+            settings.bookingEnd
+        );
+
+        updateBookingButton();
+
+        setInterval(
+            updateBookingButton,
+            1000
+        );
+
+    }
 );
 
 function updateBookingButton(){
