@@ -173,8 +173,11 @@ fetch(
                             候補
                         </button>
                 
-                        <button class="btn-blacklist">
-                            黑名單
+                        <button
+                            class="btn-cancel"
+                            data-name="${booking.name}"
+                            data-slot="${booking.slot}">
+                            取消預約
                         </button>
                 
                     </div>
@@ -229,6 +232,55 @@ fetch(
                         
                                 location.reload();
                         
+                            }
+                        );
+                
+                    }
+                );
+
+                const cancelBtn =
+                details.querySelector(
+                    ".btn-cancel"
+                );
+                
+                cancelBtn.addEventListener(
+                    "click",
+                    ()=>{
+                
+                        const formData =
+                        new URLSearchParams();
+                
+                        formData.append(
+                            "action",
+                            "cancelBooking"
+                        );
+                
+                        formData.append(
+                            "name",
+                            booking.name
+                        );
+                
+                        formData.append(
+                            "slot",
+                            booking.slot
+                        );
+                
+                        fetch(
+                            "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec",
+                            {
+                                method:"POST",
+                                body:formData
+                            }
+                        )
+                        .then(
+                            ()=>{
+                
+                                alert(
+                                    "已取消預約"
+                                );
+                
+                                location.reload();
+                
                             }
                         );
                 
