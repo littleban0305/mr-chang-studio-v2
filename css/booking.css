@@ -147,3 +147,58 @@
     pointer-events:auto;
 
 }
+
+.slot-list details{
+
+    background:white;
+
+    border-radius:14px;
+
+    margin-bottom:12px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 4px 12px
+    rgba(
+        0,
+        0,
+        0,
+        .05
+    );
+
+}
+
+.slot-list summary{
+
+    cursor:pointer;
+
+    padding:14px;
+
+    font-weight:700;
+
+    font-size:1rem;
+
+    background:#F8FAFC;
+
+    list-style:none;
+
+}
+
+.slot-list summary::-webkit-details-marker{
+
+    display:none;
+
+}
+
+.date-container{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    padding:12px;
+
+}
