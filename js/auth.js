@@ -48,6 +48,14 @@ function handleCredentialResponse(
         payload
     );
 
+    console.log(
+        payload.name
+    );
+    
+    console.log(
+        payload.email
+    );
+
     localStorage.setItem(
         "memberEmail",
         payload.email
