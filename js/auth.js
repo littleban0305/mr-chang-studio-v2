@@ -142,10 +142,6 @@ function loadMemberData(
     .then(
         member=>{
 
-            console.log(
-            member
-            );
-
             localStorage.setItem(
                 "memberName",
                 member.name
@@ -155,15 +151,14 @@ function loadMemberData(
                 "memberPhone",
                 member.phone
             );
-
+            
             const birthday =
             new Date(
                 member.birthday
             );
             
             const birthdayText =
-            birthday
-            .toLocaleDateString(
+            birthday.toLocaleDateString(
                 "sv-SE"
             );
             
