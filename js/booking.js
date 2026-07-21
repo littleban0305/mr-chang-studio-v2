@@ -395,10 +395,7 @@ function sendBooking(){
 
 }
 
-const bookingEndTime =
-new Date(
-    "2026-08-15T23:59:00"
-);
+let bookingEndTime;
 
 function updateCountdown(){
 
@@ -441,15 +438,57 @@ function updateCountdown(){
         60 /
         60
     ) % 24;
-
-    countdownDiv.textContent =
-    `截止倒數 ${days}天 ${hours}小時`;
+    
+    const minutes =
+    Math.floor(
+        diff /
+        1000 /
+        60
+    ) % 60;
+    
+    const seconds =
+    Math.floor(
+        diff /
+        1000
+    ) % 60;
+    
+    if(
+        days > 0
+    ){
+    
+        countdownDiv.textContent =
+        `截止倒數 ${days}天 ${hours}小時`;
+    
+    }
+    else{
+    
+        countdownDiv.textContent =
+        `截止倒數 ${hours}小時 ${minutes}分 ${seconds}秒`;
+    
+    }
 
 }
 
-updateCountdown();
+fetch(
+    "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec?action=settings"
+)
+.then(
+    response=>response.json()
+)
+.then(
+    settings=>{
 
-setInterval(
-    updateCountdown,
-    60000
+        bookingEndTime =
+        new Date(
+            settings.bookingEnd
+        );
+
+        updateCountdown();
+
+        setInterval(
+            updateCountdown,
+            1000
+        );
+
+    }
 );
