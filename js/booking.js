@@ -147,9 +147,6 @@ fetch(
                         "details"
                     );
                 
-                    details.open =
-                    true;
-                
                     const summary =
                     document.createElement(
                         "summary"
