@@ -1,3 +1,8 @@
+const modalOverlay =
+document.getElementById(
+    "modalOverlay"
+);
+
 const modal =
 document.getElementById(
     "bookingModal"
@@ -110,6 +115,10 @@ fetch(
                             slot;
                     
                             modal.classList.add(
+                                "show"
+                            );
+
+                            modalOverlay.classList.add(
                                 "show"
                             );
                     
@@ -261,6 +270,10 @@ function submitBooking(){
                 "show"
             );
 
+            modalOverlay.classList.remove(
+                "show"
+            );
+
             alert(
                 "預約成功！"
             );
@@ -294,6 +307,27 @@ if(
     .addEventListener(
         "click",
         submitBooking
+    );
+
+}
+
+if(
+    modalOverlay
+){
+
+    modalOverlay.addEventListener(
+        "click",
+        ()=>{
+
+            modal.classList.remove(
+                "show"
+            );
+
+            modalOverlay.classList.remove(
+                "show"
+            );
+
+        }
     );
 
 }
