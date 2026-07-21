@@ -115,10 +115,3 @@ function updateBookingButton(){
     }
 
 }
-
-updateBookingButton();
-
-setInterval(
-    updateBookingButton,
-    1000
-);
