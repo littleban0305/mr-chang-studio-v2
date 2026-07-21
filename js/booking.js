@@ -35,6 +35,10 @@ document.getElementById(
 
 let selectedSlot = null;
 
+showLoading(
+    "正在更新資料..."
+);
+
 fetch(
     "https://docs.google.com/spreadsheets/d/1PW_TBPUWeXncwL5G1tDG_qktHC7ChWd0AekIqHq6QSQ/export?format=csv&gid=0"
 )
@@ -225,6 +229,10 @@ function submitBooking(){
         return;
 
     }
+
+    showLoading(
+        "正在送出預約..."
+    );
 
     fetch(
         "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec"
