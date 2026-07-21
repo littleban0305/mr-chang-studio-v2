@@ -90,6 +90,21 @@ fetch(
 
                             selectedSlot =
                             slot;
+                            
+                            document
+                            .getElementById(
+                                "modalSlot"
+                            )
+                            .textContent =
+                            slot;
+                            
+                            document
+                            .getElementById(
+                                "bookingModal"
+                            )
+                            .classList.add(
+                                "show"
+                            );
 
                         }
                     );
