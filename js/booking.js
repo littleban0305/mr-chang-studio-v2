@@ -1,3 +1,8 @@
+const countdownDiv =
+document.getElementById(
+    "bookingCountdown"
+);
+
 const modalOverlay =
 document.getElementById(
     "modalOverlay"
