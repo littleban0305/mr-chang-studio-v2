@@ -44,6 +44,8 @@ fetch(
 
         rows.shift();
 
+        const dateGroups = {};
+
         rows.forEach(
             row=>{
 
@@ -58,6 +60,15 @@ fetch(
 
                 const slot =
                 data[0]?.trim();
+
+                const parts =
+                slot.split(" ");
+                
+                const date =
+                parts[0];
+                
+                const time =
+                parts[1];
 
                 const status =
                 data[1]?.trim();
@@ -127,7 +138,53 @@ fetch(
 
                 }
 
-                slotList.appendChild(
+                if(
+                    !dateGroups[date]
+                ){
+                
+                    const details =
+                    document.createElement(
+                        "details"
+                    );
+                
+                    details.open =
+                    true;
+                
+                    const summary =
+                    document.createElement(
+                        "summary"
+                    );
+                
+                    summary.textContent =
+                    `📅 ${date}`;
+                
+                    const container =
+                    document.createElement(
+                        "div"
+                    );
+                
+                    container.className =
+                    "date-container";
+                
+                    details.appendChild(
+                        summary
+                    );
+                
+                    details.appendChild(
+                        container
+                    );
+                
+                    slotList.appendChild(
+                        details
+                    );
+                
+                    dateGroups[date] =
+                    container;
+                
+                }
+                
+                dateGroups[date]
+                .appendChild(
                     btn
                 );
 
