@@ -394,3 +394,62 @@ function sendBooking(){
     );
 
 }
+
+const bookingEndTime =
+new Date(
+    "2026-08-15T23:59:00"
+);
+
+function updateCountdown(){
+
+    if(
+        !countdownDiv
+    ){
+        return;
+    }
+
+    const now =
+    new Date();
+
+    const diff =
+    bookingEndTime - now;
+
+    if(
+        diff <= 0
+    ){
+
+        countdownDiv.textContent =
+        "本期預約已截止";
+
+        return;
+
+    }
+
+    const days =
+    Math.floor(
+        diff /
+        1000 /
+        60 /
+        60 /
+        24
+    );
+
+    const hours =
+    Math.floor(
+        diff /
+        1000 /
+        60 /
+        60
+    ) % 24;
+
+    countdownDiv.textContent =
+    `截止倒數 ${days}天 ${hours}小時`;
+
+}
+
+updateCountdown();
+
+setInterval(
+    updateCountdown,
+    60000
+);
