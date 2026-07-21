@@ -59,6 +59,10 @@ if(cancelBtn){
         "click",
         ()=>{
 
+            showLoading(
+                "正在取消預約..."
+            );
+
             localStorage.removeItem(
                 "bookingDate"
             );
