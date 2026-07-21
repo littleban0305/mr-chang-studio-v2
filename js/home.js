@@ -24,27 +24,45 @@ function updateBookingButton(){
 
         const diff =
         startTime - now;
-
+        
         const days =
         Math.floor(
-            diff /
-            1000 /
-            60 /
-            60 /
-            24
+            diff / 1000 / 60 / 60 / 24
         );
-
+        
         const hours =
         Math.floor(
-            diff /
-            1000 /
-            60 /
-            60
+            diff / 1000 / 60 / 60
         ) % 24;
+        
+        const minutes =
+        Math.floor(
+            diff / 1000 / 60
+        ) % 60;
+        
+        const seconds =
+        Math.floor(
+            diff / 1000
+        ) % 60;
 
-        bookingBtn.textContent =
-        `開放倒數 ${days}天 ${hours}小時`;
-
+        if(days > 0){
+        
+            bookingBtn.innerHTML =
+            `
+            開放倒數<br>
+            ${days}天 ${hours}小時
+            `;
+        
+        }
+        else{
+        
+            bookingBtn.innerHTML =
+            `
+            開放倒數<br>
+            ${hours}小時 ${minutes}分 ${seconds}秒
+            `;
+        
+        }
         bookingBtn.removeAttribute(
             "href"
         );
@@ -80,5 +98,5 @@ updateBookingButton();
 
 setInterval(
     updateBookingButton,
-    60000
+    1000
 );
