@@ -37,6 +37,25 @@ fetch(
 
 function updateBookingButton(){
 
+    const isLogin =
+    localStorage.getItem(
+        "isLogin"
+    );
+    
+    if(
+        !isLogin
+    ){
+    
+        bookingBtn.textContent =
+        "登入會員";
+    
+        bookingBtn.href =
+        "login.html";
+    
+        return;
+    
+    }
+
     const now =
     new Date();
 
