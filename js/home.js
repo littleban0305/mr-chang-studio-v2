@@ -1,3 +1,8 @@
+const memberBtn =
+document.getElementById(
+    "memberBtn"
+);
+
 const bookingBtn =
 document.getElementById(
     "bookingEntryBtn"
@@ -52,9 +57,21 @@ function updateBookingButton(){
         bookingBtn.href =
         "login.html";
     
+        memberBtn.textContent =
+        "會員註冊";
+    
+        memberBtn.href =
+        "register.html";
+    
         return;
     
     }
+    
+    memberBtn.textContent =
+    "會員中心";
+    
+    memberBtn.href =
+    "profile.html";
 
     const now =
     new Date();
