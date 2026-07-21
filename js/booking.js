@@ -1,14 +1,29 @@
+const modal =
+document.getElementById(
+    "bookingModal"
+);
+
+const modalSlot =
+document.getElementById(
+    "modalSlot"
+);
+
+const confirmBookingBtn =
+document.getElementById(
+    "confirmBookingBtn"
+);
+
+const modalBookingNote =
+document.getElementById(
+    "modalBookingNote"
+);
+
 const slotList =
 document.getElementById(
     "slotList"
 );
 
 let selectedSlot = null;
-
-const bookBtn =
-document.getElementById(
-    "bookBtn"
-);
 
 fetch(
     "https://docs.google.com/spreadsheets/d/1PW_TBPUWeXncwL5G1tDG_qktHC7ChWd0AekIqHq6QSQ/export?format=csv&gid=0"
@@ -73,7 +88,7 @@ fetch(
                     btn.addEventListener(
                         "click",
                         ()=>{
-
+                    
                             document
                             .querySelectorAll(
                                 ".slot-btn"
@@ -83,29 +98,21 @@ fetch(
                                     "selected"
                                 )
                             );
-
+                    
                             btn.classList.add(
                                 "selected"
                             );
-
+                    
                             selectedSlot =
                             slot;
-                            
-                            document
-                            .getElementById(
-                                "modalSlot"
-                            )
-                            .textContent =
+                    
+                            modalSlot.textContent =
                             slot;
-                            
-                            document
-                            .getElementById(
-                                "bookingModal"
-                            )
-                            .classList.add(
+                    
+                            modal.classList.add(
                                 "show"
                             );
-
+                    
                         }
                     );
 
@@ -121,57 +128,41 @@ fetch(
     }
 );
 
-if(bookBtn){
+function sendBooking(){
 
-    bookBtn.addEventListener(
-        "click",
-        ()=>{
-
-            const memberName =
-            localStorage.getItem(
-                "memberName"
-            );
-
-            fetch(
-                "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec"
-                +
-                "?action=checkBooking"
-                +
-                "&name="
-                +
-                encodeURIComponent(
-                    memberName
-                )
-            )
-            .then(
-                response=>response.text()
-            )
-            .then(
-                result=>{
-
-                    if(
-                        result === "exists"
-                    ){
-
-                        alert(
-                            "❌ 您本月已經預約過一次了"
-                        );
-
-                        return;
-
-                    }
-
-                    submitBooking();
-
-                }
-            );
-
+    fetch(
+        "你的AppsScript網址"
+        +
+        "?action=checkBooking"
+        +
+        "&name="
+        +
+        encodeURIComponent(
+            memberName
+        )
+    )
+    .then(
+        response=>response.text()
+    )
+    .then(
+        result=>{
+    
+            if(
+                result === "exists"
+            ){
+    
+                alert(
+                    "❌ 您本月已經預約過一次了"
+                );
+    
+                return;
+    
+            }
+    
+            sendBooking();
+    
         }
     );
-
-} // ← 這裡結束 if(bookBtn)
-
-function submitBooking(){
 
     const memberName =
     localStorage.getItem(
@@ -202,9 +193,7 @@ function submitBooking(){
     }
 
     const bookingNote =
-    document.getElementById(
-        "bookingNote"
-    ).value;
+    modalBookingNote.value;
 
     const formData =
     new URLSearchParams();
@@ -268,6 +257,10 @@ function submitBooking(){
                 new Date().toISOString()
             );
 
+            modal.classList.remove(
+                "show"
+            );
+
             alert(
                 "預約成功！"
             );
@@ -289,6 +282,18 @@ function submitBooking(){
             );
 
         }
+    );
+
+}
+
+if(
+    confirmBookingBtn
+){
+
+    confirmBookingBtn
+    .addEventListener(
+        "click",
+        submitBooking
     );
 
 }
