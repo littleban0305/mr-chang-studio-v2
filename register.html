@@ -36,16 +36,22 @@
                 註冊會員後即可預約與查看完整資訊
             </p>
 
-            <button class="primary-btn">
-
-                <img
-                    src="assets/google.png"
-                    class="google-icon"
-                    alt="Google">
+            <div
+                id="g_id_onload"
+                data-client_id="693180291806-a4v53im0ibvsvf6admml977uvkfu8s68.apps.googleusercontent.com"
+                data-callback="handleCredentialResponse"
+            >
+            </div>
             
-                使用 Google 帳號註冊
-            
-            </button>
+            <div
+                class="g_id_signin"
+                data-type="standard"
+                data-size="large"
+                data-theme="outline"
+                data-text="signin_with"
+                data-shape="rectangular"
+            >
+            </div>
 
             <br><br>
 
