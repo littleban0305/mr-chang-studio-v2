@@ -152,9 +152,20 @@ function loadMemberData(
                 member.phone
             );
 
+            const birthday =
+            new Date(
+                member.birthday
+            );
+            
+            const birthdayText =
+            birthday
+            .toLocaleDateString(
+                "sv-SE"
+            );
+            
             localStorage.setItem(
                 "memberBirthday",
-                member.birthday
+                birthdayText
             );
 
             window.location.href =
