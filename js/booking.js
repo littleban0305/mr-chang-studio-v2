@@ -116,173 +116,160 @@ if(bookBtn){
             localStorage.getItem(
                 "memberName"
             );
-            
+
             fetch(
-            
-                "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec"
+                "...?action=checkBooking&name="
                 +
-            
-                "?action=checkBooking"
-            
-                +
-            
-                "&name="
-            
-                +
-            
                 encodeURIComponent(
                     memberName
                 )
-            
             )
             .then(
                 response=>response.text()
             )
             .then(
                 result=>{
-            
+
                     if(
                         result === "exists"
                     ){
-            
+
                         alert(
                             "❌ 您本月已經預約過一次了"
                         );
-            
+
                         return;
-            
+
                     }
-            
-                    // 開始送出預約
-            
-            if(!memberName){
-            
-                alert(
-                    "請先完成會員資料"
-                );
-            
-                window.location.href =
-                "complete-profile.html";
-            
-                return;
-            
-            }
 
-            if(!selectedSlot){
+                    submitBooking();
 
-                alert(
-                    "請先選擇時段"
-                );
-
-                return;
-
-            }
-
-            const bookingNote =
-            document.getElementById(
-                "bookingNote"
-            ).value;
-
-            const formData =
-            new URLSearchParams();
-            
-            formData.append(
-                "name",
-                localStorage.getItem(
-                    "memberName"
-                )
+                }
             );
 
-            formData.append(
-                "phone",
-                localStorage.getItem(
-                    "memberPhone"
-                )
-            );
-            
-            formData.append(
-                "birthday",
-                localStorage.getItem(
-                    "memberBirthday"
-                )
-            );
-            
-            formData.append(
-                "slot",
+        }
+    );
+
+} // ← 這裡結束 if(bookBtn)
+
+function submitBooking(){
+
+    const memberName =
+    localStorage.getItem(
+        "memberName"
+    );
+
+    if(!memberName){
+
+        alert(
+            "請先完成會員資料"
+        );
+
+        window.location.href =
+        "complete-profile.html";
+
+        return;
+
+    }
+
+    if(!selectedSlot){
+
+        alert(
+            "請先選擇時段"
+        );
+
+        return;
+
+    }
+
+    const bookingNote =
+    document.getElementById(
+        "bookingNote"
+    ).value;
+
+    const formData =
+    new URLSearchParams();
+
+    formData.append(
+        "name",
+        localStorage.getItem(
+            "memberName"
+        )
+    );
+
+    formData.append(
+        "phone",
+        localStorage.getItem(
+            "memberPhone"
+        )
+    );
+
+    formData.append(
+        "birthday",
+        localStorage.getItem(
+            "memberBirthday"
+        )
+    );
+
+    formData.append(
+        "slot",
+        selectedSlot
+    );
+
+    formData.append(
+        "note",
+        bookingNote
+    );
+
+    fetch(
+        "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec",
+        {
+            method:"POST",
+            body:formData
+        }
+    )
+    .then(
+        response=>response.text()
+    )
+    .then(
+        ()=>{
+
+            localStorage.setItem(
+                "bookingDate",
                 selectedSlot
             );
-            
-            formData.append(
-                "note",
+
+            localStorage.setItem(
+                "bookingNote",
                 bookingNote
             );
 
-            console.log(
-                selectedSlot
-            );
-            
-            fetch(
-                "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec",
-                {
-            
-                    method:"POST",
-            
-                    body:formData
-            
-                }
-            )
-            .then(
-                response=>response.text()
-            )
-            .then(
-                data=>{
-            
-                    localStorage.setItem(
-                        "bookingDate",
-                        selectedSlot
-                    );
-            
-                    localStorage.setItem(
-                        "bookingNote",
-                        bookingNote
-                    );
-            
-                    localStorage.setItem(
-                        "bookingCreatedAt",
-                        new Date().toISOString()
-                    );
-            
-                    alert(
-                        "預約成功！"
-                    );
-            
-                    window.location.href =
-                    "my-bookings.html";
-            
-                }
-            )
-            .catch(
-                error=>{
-
-                    console.error(
-                        error
-                    );
-
-                    alert(
-                        "預約失敗"
-                    );
-
-                }
+            localStorage.setItem(
+                "bookingCreatedAt",
+                new Date().toISOString()
             );
 
-        } // result=>{
+            alert(
+                "預約成功！"
+            );
 
-    } // then 的 callback
+            window.location.href =
+            "my-bookings.html";
 
-); // .then()
+        }
+    )
+    .catch(
+        error=>{
 
-        } // click
+            console.error(
+                error
+            );
 
-    ); // addEventListener
+            alert(
+                "預約失敗"
+            );
 
-} // if(bookBtn)
+        }
+    );
+
+}
