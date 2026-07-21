@@ -5,7 +5,7 @@ document.getElementById(
 
 const startTime =
 new Date(
-    "2026-08-01T18:00:00"
+    "2026-07-21T11:00:00"
 );
 
 const endTime =
