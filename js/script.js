@@ -15,3 +15,57 @@ menuBtn.addEventListener("click", () => {
     }
 
 });
+
+function showLoading(
+    text
+){
+
+    const overlay =
+    document.getElementById(
+        "loadingOverlay"
+    );
+
+    const loadingText =
+    document.getElementById(
+        "loadingText"
+    );
+
+    if(
+        loadingText
+    ){
+
+        loadingText.textContent =
+        text;
+
+    }
+
+    if(
+        overlay
+    ){
+
+        overlay.classList.add(
+            "show"
+        );
+
+    }
+
+}
+
+function hideLoading(){
+
+    const overlay =
+    document.getElementById(
+        "loadingOverlay"
+    );
+
+    if(
+        overlay
+    ){
+
+        overlay.classList.remove(
+            "show"
+        );
+
+    }
+
+}
