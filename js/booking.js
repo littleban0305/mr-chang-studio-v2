@@ -156,7 +156,7 @@ fetch(
                     );
                 
                     summary.textContent =
-                    `📅 ${date}`;
+                    date;
                 
                     const container =
                     document.createElement(
