@@ -142,6 +142,10 @@ function loadMemberData(
     .then(
         member=>{
 
+            console.log(
+            member
+            );
+
             localStorage.setItem(
                 "memberName",
                 member.name
