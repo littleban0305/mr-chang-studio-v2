@@ -99,7 +99,7 @@ fetch(
                 else{
 
                     btn.textContent =
-                    slot;
+                    time;
 
                     btn.addEventListener(
                         "click",
