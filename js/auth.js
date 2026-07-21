@@ -77,7 +77,7 @@ function checkMember(
 ){
 
     fetch(
-        "你的AppsScript網址"
+        "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec"
         +
         "?action=checkMember"
         +
