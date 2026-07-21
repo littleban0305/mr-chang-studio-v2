@@ -128,7 +128,7 @@ fetch(
     }
 );
 
-function sendBooking(){
+function submitBooking(){
 
     fetch(
         "你的AppsScript網址"
