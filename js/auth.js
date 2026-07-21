@@ -104,7 +104,7 @@ function checkMember(
             ){
 
                 loadMemberData(
-                    payload.email
+                    email
                 );
 
             }
