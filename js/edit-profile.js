@@ -43,11 +43,6 @@ saveBtn.addEventListener(
             "memberBirthday"
         ).value;
 
-        const email =
-        localStorage.getItem(
-            "memberEmail"
-        );
-
         if(
             !name ||
             !phone ||
@@ -62,17 +57,23 @@ saveBtn.addEventListener(
 
         }
 
+        showLoading(
+            "正在更新資料..."
+        );
+
         const formData =
         new URLSearchParams();
 
         formData.append(
             "action",
-            "registerMember"
+            "updateMember"
         );
 
         formData.append(
             "email",
-            email
+            localStorage.getItem(
+                "memberEmail"
+            )
         );
 
         formData.append(
@@ -90,10 +91,6 @@ saveBtn.addEventListener(
             birthday
         );
 
-        showLoading(
-            "正在建立會員..."
-        );
-        
         fetch(
             "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec",
             {
@@ -105,7 +102,7 @@ saveBtn.addEventListener(
             response=>response.text()
         )
         .then(
-            ()=>{
+            result=>{
 
                 localStorage.setItem(
                     "memberName",
@@ -120,15 +117,6 @@ saveBtn.addEventListener(
                 localStorage.setItem(
                     "memberBirthday",
                     birthday
-                );
-
-                localStorage.setItem(
-                    "isLogin",
-                    "true"
-                );
-
-                alert(
-                    "會員資料已更新"
                 );
 
                 location.href =
