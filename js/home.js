@@ -188,48 +188,71 @@ fetch(
         list.innerHTML =
         latest
         .map(
-        a=>`
+            a=>{
         
-        <div
-            class="announcement-card"
-        >
+                const typeClass = {
         
-            <span
-                class="announcement-date"
-            >
-                ${a.date}
-            </span>
+                    "系統公告":
+                    "system-tag",
         
-            <div
-                class="announcement-type"
-            >
-                ${a.type}
-            </div>
+                    "活動公告":
+                    "activity-tag",
         
-            <h3>
-                ${a.title}
-            </h3>
+                    "維護公告":
+                    "maintenance-tag",
         
-            <p>
-                ${a.content}
-            </p>
+                    "工作室公告":
+                    "studio-tag"
         
-        </div>
+                }[a.type] || "system-tag";
         
-        `
+                return `
+        
+                <div
+                    class="announcement-card"
+                >
+        
+                    <span
+                        class="announcement-date"
+                    >
+                        ${a.date}
+                    </span>
+        
+                    <div
+                        class="
+                        announcement-type
+                        ${typeClass}
+                        "
+                    >
+                        ${a.type}
+                    </div>
+        
+                    <h3>
+                        ${a.title}
+                    </h3>
+        
+                    <p>
+                        ${a.content}
+                    </p>
+        
+                </div>
+        
+                `;
+        
+            }
         )
-        .join("")
-        
-        +
-        
-        `
-        <a
-            href="announcements.html"
-            class="announcement-more-btn"
-        >
-            查看更多公告 →
-        </a>
-        `;
+        .join("");
+            
+            +
+            
+            `
+            <a
+                href="announcements.html"
+                class="announcement-more-btn"
+            >
+                查看更多公告 →
+            </a>
+            `;
 
     }
 );
