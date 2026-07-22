@@ -1464,13 +1464,13 @@
 
     padding:16px;
 
-    border:none;
+    border:1px solid #D1D5DB;
 
-    border-radius:18px;
+    border-radius:16px;
 
-    background:#0ABAB5;
+    background:white;
 
-    color:white;
+    color:#374151;
 
     font-size:1rem;
 
