@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        編輯會員資料
+    </title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+
+</head>
+
+<body>
+
+    <main class="auth-page">
+
+        <div class="auth-card">
+
+            <img
+                src="assets/logo1.png"
+                class="auth-logo"
+                alt="Mr. Chang">
+
+            <h1>
+                編輯會員資料
+            </h1>
+
+            <p>
+                修改已儲存的會員資料
+            </p>
+
+            <input
+                type="text"
+                id="memberName"
+                placeholder="姓名">
+
+            <br><br>
+
+            <input
+                type="tel"
+                id="memberPhone"
+                placeholder="電話">
+
+            <br><br>
+
+            <input
+                type="date"
+                id="memberBirthday">
+
+            <br><br>
+
+            <button
+                id="saveProfileBtn"
+                class="primary-btn">
+
+                完成註冊
+
+            </button>
+
+        </div>
+
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/complete-profile.js"></script>
+
+    <div id="loadingOverlay">
+    
+        <div class="loadingBox">
+    
+            <div class="spinner"></div>
+    
+            <p id="loadingText">
+                資料同步中...
+            </p>
+    
+        </div>
+    
+    </div>
+
+</body>
+
+</html>
