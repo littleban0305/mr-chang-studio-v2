@@ -1,3 +1,5 @@
+let loadedCount = 0;
+
 const memberBtn =
 document.getElementById(
     "memberBtn"
@@ -46,6 +48,8 @@ fetch(
             updateBookingButton,
             1000
         );
+
+        checkLoading();
 
     }
 );
@@ -264,5 +268,21 @@ fetch(
         </a>
         `;
 
+        checkLoading();
+
     }
 );
+
+function checkLoading(){
+
+    loadedCount++;
+
+    if(
+        loadedCount >= 2
+    ){
+
+        hideLoading();
+
+    }
+
+}
