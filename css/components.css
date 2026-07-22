@@ -1358,3 +1358,66 @@
     margin:auto;
 
 }
+
+.form-group{
+
+    margin-bottom:20px;
+
+    text-align:left;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:#374151;
+
+}
+
+.form-group input{
+
+    width:100%;
+
+    padding:16px 18px;
+
+    border:2px solid #E5E7EB;
+
+    border-radius:16px;
+
+    font-size:1rem;
+
+    background:white;
+
+    transition:.25s;
+
+    box-sizing:border-box;
+
+}
+
+.form-group input:focus{
+
+    outline:none;
+
+    border-color:#0ABAB5;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(
+            10,
+            186,
+            181,
+            .15
+        );
+
+}
+
+.form-group input::placeholder{
+
+    color:#9CA3AF;
+
+}
