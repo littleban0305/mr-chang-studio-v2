@@ -1,5 +1,5 @@
 showLoading(
-    "..."
+    "正在載入公告..."
 );
 
 fetch(
