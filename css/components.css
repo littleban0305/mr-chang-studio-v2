@@ -1143,3 +1143,17 @@
     margin-bottom:5px;
 
 }
+
+.announcement-date{
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+    color:#94a3b8;
+
+    font-size:12px;
+
+}
