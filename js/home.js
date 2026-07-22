@@ -182,27 +182,35 @@ fetch(
         list.innerHTML =
         announcements
         .map(
-            a=>`
-            <div
-                class="announcement-card"
+        a=>`
+        
+        <div
+            class="announcement-card"
+        >
+        
+            <span
+                class="announcement-date"
             >
-
-                <div
-                    class="announcement-type"
-                >
-                    ${a.type}
-                </div>
-
-                <h3>
-                    ${a.title}
-                </h3>
-
-                <p>
-                    ${a.content}
-                </p>
-
+                ${a.date}
+            </span>
+        
+            <div
+                class="announcement-type"
+            >
+                ${a.type}
             </div>
-            `
+        
+            <h3>
+                ${a.title}
+            </h3>
+        
+            <p>
+                ${a.content}
+            </p>
+        
+        </div>
+        
+        `
         )
         .join("");
 
