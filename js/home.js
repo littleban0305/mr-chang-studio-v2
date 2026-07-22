@@ -151,3 +151,60 @@ function updateBookingButton(){
     }
 
 }
+
+fetch(
+    "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec?action=getAnnouncements"
+)
+.then(
+    response=>response.json()
+)
+.then(
+    announcements=>{
+
+        const list =
+        document.getElementById(
+            "announcementList"
+        );
+
+        if(
+            announcements.length
+            ===
+            0
+        ){
+
+            list.innerHTML =
+            "目前沒有公告";
+
+            return;
+
+        }
+
+        list.innerHTML =
+        announcements
+        .map(
+            a=>`
+            <div
+                class="announcement-card"
+            >
+
+                <div
+                    class="announcement-type"
+                >
+                    ${a.type}
+                </div>
+
+                <h3>
+                    ${a.title}
+                </h3>
+
+                <p>
+                    ${a.content}
+                </p>
+
+            </div>
+            `
+        )
+        .join("");
+
+    }
+);
