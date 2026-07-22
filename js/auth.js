@@ -174,3 +174,27 @@ function loadMemberData(
     );
 
 }
+
+document
+.getElementById(
+    "googleLoginBtn"
+)
+?.addEventListener(
+    "click",
+    ()=>{
+
+        const realBtn =
+        document.querySelector(
+            ".g_id_signin div"
+        );
+
+        if(
+            realBtn
+        ){
+
+            realBtn.click();
+
+        }
+
+    }
+);
