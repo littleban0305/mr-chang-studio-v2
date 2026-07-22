@@ -1439,3 +1439,62 @@
         );
 
 }
+
+.g_id_signin{
+
+    position:absolute;
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+.custom-google-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#0ABAB5;
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.custom-google-btn:hover{
+
+    transform:
+        translateY(-2px);
+
+    background:#089C98;
+
+    box-shadow:
+        0 8px 20px rgba(
+            10,
+            186,
+            181,
+            .25
+        );
+
+}
