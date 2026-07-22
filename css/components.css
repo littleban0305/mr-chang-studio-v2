@@ -1304,3 +1304,23 @@
     background:#089C98;
 
 }
+
+.announcement-page{
+
+    padding:80px 20px;
+
+    background:#EAFDFC;
+
+    min-height:100vh;
+
+}
+
+.announcement-page h1{
+
+    text-align:center;
+
+    color:#1F2937;
+
+    margin-bottom:10px;
+
+}
