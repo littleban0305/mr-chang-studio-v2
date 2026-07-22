@@ -11,6 +11,10 @@ document.getElementById(
 let startTime;
 let endTime;
 
+showLoading(
+    "正在讀取資料..."
+);
+
 fetch(
     "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec?action=settings"
 )
