@@ -179,8 +179,14 @@ fetch(
 
         }
 
+        const latest =
+        announcements.slice(
+            0,
+            3
+        );
+        
         list.innerHTML =
-        announcements
+        latest
         .map(
         a=>`
         
@@ -212,7 +218,18 @@ fetch(
         
         `
         )
-        .join("");
+        .join("")
+        
+        +
+        
+        `
+        <a
+            href="announcements.html"
+            class="announcement-more-btn"
+        >
+            查看更多公告 →
+        </a>
+        `;
 
     }
 );
