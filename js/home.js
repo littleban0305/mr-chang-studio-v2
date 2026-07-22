@@ -11,6 +11,12 @@ document.getElementById(
 let startTime;
 let endTime;
 
+console.log(
+    document.getElementById(
+        "loadingOverlay"
+    )
+);
+
 showLoading(
     "正在讀取資料..."
 );
