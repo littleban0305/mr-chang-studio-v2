@@ -72,6 +72,10 @@ function handleCredentialResponse(
         payload.name
     );
 
+    showLoading(
+        "登入中..."
+    );
+
     checkMember(
         payload.email
     );
@@ -102,14 +106,20 @@ function checkMember(
             if(
                 result === "exists"
             ){
-
+            
+                showLoading(
+                    "正在讀取會員資料..."
+                );
+            
                 loadMemberData(
                     email
                 );
-
+            
             }
 
             else{
+
+                hideLoading();
 
                 window.location.href =
                 "complete-profile.html";
@@ -172,7 +182,17 @@ function loadMemberData(
 
         }
     );
-
+    .catch(
+        error=>{
+    
+            hideLoading();
+    
+            console.error(
+                error
+            );
+    
+        }
+    );
 }
 
 document
