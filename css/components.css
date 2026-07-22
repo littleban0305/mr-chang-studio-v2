@@ -1110,13 +1110,27 @@
 
 .announcement-card{
 
-    background:#1f1f1f;
+    position:relative;
 
-    border-radius:12px;
+    background:#dbeafe;
 
-    padding:15px;
+    border-left:5px solid #3b82f6;
+
+    border-radius:16px;
+
+    padding:18px;
 
     margin-bottom:15px;
+
+    color:#1e293b;
+
+    box-shadow:
+    0 4px 12px rgba(
+        59,
+        130,
+        246,
+        0.15
+    );
 
 }
 
