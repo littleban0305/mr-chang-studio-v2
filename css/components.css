@@ -1484,17 +1484,19 @@
 
 .custom-google-btn:hover{
 
+    border-color:#0ABAB5;
+
+    color:#0ABAB5;
+
     transform:
         translateY(-2px);
 
-    background:#089C98;
-
     box-shadow:
         0 8px 20px rgba(
-            10,
-            186,
-            181,
-            .25
+            0,
+            0,
+            0,
+            .08
         );
 
 }
