@@ -1138,6 +1138,8 @@
 
     padding:25px;
 
+    padding-top:35px;
+
     margin-bottom:20px;
 
     border-radius:20px;
@@ -1248,5 +1250,57 @@
     translateY(-2px);
 
     background:#0ABAB5;
+
+}
+
+.system-tag{
+    background:#D7F7F6;
+    color:#0ABAB5;
+}
+
+.activity-tag{
+    background:#FEF3C7;
+    color:#D97706;
+}
+
+.maintenance-tag{
+    background:#FEE2E2;
+    color:#DC2626;
+}
+
+.studio-tag{
+    background:#EDE9FE;
+    color:#7C3AED;
+}
+
+.announcement-card{
+
+    transition:
+        transform .2s,
+        box-shadow .2s;
+
+}
+
+.announcement-card:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(
+            0,
+            0,
+            0,
+            .08
+        );
+
+}
+
+.announcement-more-btn:hover{
+
+    transform:
+        translateY(-2px);
+
+    background:#089C98;
 
 }
