@@ -140,26 +140,23 @@ body{
 
 .scroll-indicator{
 
-    display:flex;
+    position:absolute;
 
-    justify-content:center;
+    bottom:25px;
 
-    align-items:center;
+    left:50%;
 
-    width:100%;
-
-    font-size:2.5rem;
-    font-weight:700;
+    transform:translateX(-50%);
 
     color:white;
 
-    padding-top:20px;
+    font-size:2rem;
 
-    margin-top:-25px;
+    line-height:.8;
 
     opacity:.8;
 
     animation:
-    swipeUp 1.5s infinite;
+    swipeUp 2s infinite;
 
 }
