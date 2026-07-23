@@ -2016,9 +2016,9 @@
 
     position:absolute;
 
-    top:-5px;
+    top:-6px;
 
-    right:-5px;
+    right:-8px;
 
     width:18px;
 
@@ -2037,5 +2037,37 @@
     align-items:center;
 
     justify-content:center;
+
+}
+
+.notification-panel{
+
+    position:fixed;
+
+    top:85px;
+
+    right:20px;
+
+    width:320px;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.15);
+
+    display:none;
+
+    z-index:9999;
+
+}
+
+.notification-item{
+
+    padding:15px 20px;
+
+    border-bottom:
+    1px solid #eee;
 
 }
