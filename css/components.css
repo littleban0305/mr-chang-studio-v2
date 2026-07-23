@@ -2116,3 +2116,19 @@
     transform:rotate(45deg);
 
 }
+
+.notification-title{
+
+    font-weight:600;
+
+    margin-bottom:6px;
+
+}
+
+.notification-time{
+
+    font-size:.85rem;
+
+    color:#888;
+
+}
