@@ -82,3 +82,29 @@ body{
     }
 
 }
+
+@media (min-width:1200px){
+
+    .hero{
+
+        min-height:100vh;
+
+        max-width:1400px;
+
+        margin:auto;
+
+        display:grid;
+
+        grid-template-columns:
+        1fr 1fr;
+
+        gap:80px;
+
+        align-items:center;
+
+        padding:
+        120px 80px;
+
+    }
+
+}
