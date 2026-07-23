@@ -16,6 +16,42 @@ menuBtn.addEventListener("click", () => {
 
 });
 
+function markNotificationsRead(){
+
+    const email =
+    localStorage.getItem(
+        "memberEmail"
+    );
+
+    if(
+        !email
+    ){
+        return;
+    }
+
+    const formData =
+    new URLSearchParams();
+
+    formData.append(
+        "action",
+        "markNotificationsRead"
+    );
+
+    formData.append(
+        "email",
+        email
+    );
+
+    fetch(
+        "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec",
+        {
+            method:"POST",
+            body:formData
+        }
+    );
+
+}
+
 function showLoading(
     text
 ){
@@ -101,6 +137,8 @@ notificationBtn?.addEventListener(
             "block";
 
         }
+
+        markNotificationsRead();
 
     }
 );
