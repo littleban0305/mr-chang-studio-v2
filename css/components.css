@@ -1918,10 +1918,16 @@
 
 .site-container{
 
-    max-width:1200px;
+    max-width:1400px;
 
     margin:0 auto;
 
-    background:#0ABAB5;
+    background:
+    linear-gradient(
+        180deg,
+        #55D6D1 0%,
+        #CFEAEA 25%,
+        #EAFDFC 100%
+    );
 
 }
