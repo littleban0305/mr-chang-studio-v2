@@ -167,6 +167,39 @@ function loadNotifications(){
 
 }
 
+function updateBadge(
+    notifications
+){
+
+    const badge =
+    document.getElementById(
+        "notificationBadge"
+    );
+
+    const unread =
+    notifications.filter(
+        n=>!n.read
+    ).length;
+
+    if(
+        unread <= 0
+    ){
+
+        badge.style.display =
+        "none";
+
+        return;
+
+    }
+
+    badge.style.display =
+    "flex";
+
+    badge.textContent =
+    unread;
+
+}
+
 function updateBookingButton(){
 
     const isLogin =
