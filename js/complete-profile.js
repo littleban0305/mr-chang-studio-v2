@@ -115,6 +115,21 @@ saveBtn.addEventListener(
 
             }
         );
+        .catch(
+            error=>{
+        
+                hideLoading();
+        
+                alert(
+                    "建立會員失敗"
+                );
+        
+                console.error(
+                    error
+                );
+        
+            }
+        );
 
     }
 );
