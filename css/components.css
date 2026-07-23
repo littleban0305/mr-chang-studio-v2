@@ -1992,23 +1992,25 @@
 
 }
 
-#notificationBtn{
+.nav-icon-btn{
 
-    position:relative;
+    width:42px;
+
+    height:42px;
 
     border:none;
 
     background:none;
 
-    cursor:pointer;
-
-    color:#1F2937;
-
     display:flex;
+
+    justify-content:center;
 
     align-items:center;
 
-    justify-content:center;
+    cursor:pointer;
+
+    color:#1F2937;
 
 }
 
