@@ -49,6 +49,83 @@
     margin-top:30px;
 }
 
+@media (min-width:1200px){
+
+    .hero-buttons{
+
+        flex-direction:row;
+
+        justify-content:center;
+
+        align-items:center;
+
+        gap:20px;
+
+    }
+
+}
+
+@media (min-width:1200px){
+
+    .brand-logo{
+
+        width:420px;
+
+        max-width:100%;
+
+    }
+
+}
+
+@media (min-width:1200px){
+
+    .about p{
+
+        max-width:1000px;
+
+        font-size:1.1rem;
+
+    }
+
+}
+
+@media (min-width:1200px){
+
+    .environment-grid{
+
+        display:grid;
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:30px;
+
+    }
+
+}
+
+@media (min-width:1200px){
+
+    #announcementList{
+
+        max-width:1400px;
+
+        margin:auto;
+
+    }
+
+}
+
+@media (min-width:1200px){
+
+    .profile-page{
+
+        max-width:1200px;
+
+    }
+
+}
+
 .primary-btn,
 .secondary-btn{
 
