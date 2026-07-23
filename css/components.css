@@ -1665,3 +1665,153 @@
     }
 
 }
+
+/* =========================
+   平板版
+========================= */
+
+@media (min-width:768px){
+
+    .hero-buttons{
+
+        flex-direction:row;
+
+        justify-content:center;
+
+    }
+
+    .profile-menu{
+
+        display:grid;
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:15px;
+
+    }
+
+    .slot-list{
+
+        display:grid;
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:12px;
+
+    }
+
+    #announcementList{
+
+        display:grid;
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:20px;
+
+        max-width:1200px;
+
+    }
+
+}
+
+/* =========================
+   桌機版
+========================= */
+
+@media (min-width:1200px){
+
+    .about p{
+
+        max-width:1000px;
+
+    }
+
+    .environment{
+
+        padding:100px 40px;
+
+    }
+
+    .environment-grid{
+
+        display:grid;
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:30px;
+
+        max-width:1400px;
+
+        margin:auto;
+
+    }
+
+    .env-card{
+
+        max-width:none;
+
+        margin:0;
+
+    }
+
+    .profile-page{
+
+        max-width:1200px;
+
+    }
+
+    .profile-info{
+
+        display:grid;
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:20px;
+
+    }
+
+    .info-item{
+
+        border-bottom:none;
+
+        padding:15px;
+
+        background:#F8FAFC;
+
+        border-radius:14px;
+
+    }
+
+    .profile-menu{
+
+        grid-template-columns:
+        repeat(3,1fr);
+
+    }
+
+    .booking-card{
+
+        max-width:1000px;
+
+    }
+
+    .slot-list{
+
+        grid-template-columns:
+        repeat(3,1fr);
+
+    }
+
+    #announcementList{
+
+        grid-template-columns:
+        repeat(3,1fr);
+
+    }
+
+}
