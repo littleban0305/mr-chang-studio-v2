@@ -159,4 +159,7 @@ body{
 
     opacity:.8;
 
+    animation:
+    swipeUp 1.5s infinite;
+
 }
