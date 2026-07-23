@@ -34,11 +34,6 @@ body{
 
     align-items:center;
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
     padding:120px 20px 60px;
 
     text-align:center;
@@ -51,6 +46,8 @@ body{
     );
 
     margin-top:80px;
+
+    padding-bottom:120px;
 }
 
 .hero-image{
