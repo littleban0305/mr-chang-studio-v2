@@ -131,3 +131,30 @@ body{
     }
 
 }
+
+.hero{
+
+    position:relative;
+
+}
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#0ABAB5;
+
+    font-size:2rem;
+
+    opacity:.8;
+
+    animation:
+    swipeUp 1.5s infinite;
+
+}
