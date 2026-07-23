@@ -1925,8 +1925,9 @@
     background:
     linear-gradient(
         180deg,
-        #55D6D1,
-        #DDF5F4
+        #55D6D1 0%,
+        #BFEAE8 40%,
+        #8EDDD9 100%
     );
 
 }
