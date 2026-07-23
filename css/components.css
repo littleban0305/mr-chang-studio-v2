@@ -1892,3 +1892,35 @@
     }
 
 }
+
+.announcement-more-btn{
+
+    margin:40px auto 0;
+
+    display:block;
+
+    width:fit-content;
+
+}
+
+@media (min-width:1200px){
+
+    .env-card img{
+
+        height:350px;
+
+    }
+
+}
+
+@media (min-width:1200px){
+
+    .booking-rules{
+
+        max-width:1200px;
+
+        margin:auto;
+
+    }
+
+}
