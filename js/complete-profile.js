@@ -114,7 +114,7 @@ saveBtn.addEventListener(
                 "profile.html";
 
             }
-        );
+        )
         .catch(
             error=>{
         
