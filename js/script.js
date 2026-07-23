@@ -69,3 +69,38 @@ function hideLoading(){
     }
 
 }
+
+const notificationBtn =
+document.getElementById(
+    "notificationBtn"
+);
+
+const notificationPanel =
+document.getElementById(
+    "notificationPanel"
+);
+
+notificationBtn?.addEventListener(
+    "click",
+    ()=>{
+
+        if(
+            notificationPanel.style.display
+            ===
+            "block"
+        ){
+
+            notificationPanel.style.display =
+            "none";
+
+        }
+
+        else{
+
+            notificationPanel.style.display =
+            "block";
+
+        }
+
+    }
+);
