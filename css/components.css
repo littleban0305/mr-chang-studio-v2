@@ -2018,9 +2018,9 @@
 
     position:absolute;
 
-    top:-6px;
+    top:2px;
 
-    right:-8px;
+    right:2px;
 
     width:18px;
 
@@ -2036,9 +2036,30 @@
 
     display:flex;
 
+    justify-content:center;
+
     align-items:center;
 
+}
+#notificationBtn{
+
+    position:relative;
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    background:none;
+
+    display:flex;
+
     justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
 
 }
 
@@ -2107,7 +2128,7 @@
 
     top:-8px;
 
-    right:22px;
+    right:75px;
 
     width:16px;
 
