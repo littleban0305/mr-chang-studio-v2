@@ -1939,15 +1939,13 @@
     .booking-rules{
 
         display:grid;
-
+    
         grid-template-columns:
-        400px
+        1fr
         1fr;
-
-        gap:40px;
-
-        align-items:start;
-
+    
+        gap:20px;
+    
     }
 
     .booking-rules h2{
