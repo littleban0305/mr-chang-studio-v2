@@ -1991,3 +1991,51 @@
     gap:15px;
 
 }
+
+#notificationBtn{
+
+    position:relative;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    color:#1F2937;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+#notificationBadge{
+
+    position:absolute;
+
+    top:-5px;
+
+    right:-5px;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:#FF4D4F;
+
+    color:white;
+
+    font-size:.7rem;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
