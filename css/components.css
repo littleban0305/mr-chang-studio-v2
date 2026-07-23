@@ -2073,3 +2073,46 @@
     1px solid #eee;
 
 }
+
+.notification-panel{
+
+    position:fixed;
+
+    top:85px;
+
+    right:70px;
+
+    width:340px;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.15);
+
+    display:none;
+
+    z-index:9999;
+
+}
+
+.notification-panel::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-10px;
+
+    right:25px;
+
+    width:20px;
+
+    height:20px;
+
+    background:white;
+
+    transform:rotate(45deg);
+
+}
