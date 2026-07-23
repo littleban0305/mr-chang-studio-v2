@@ -1128,11 +1128,31 @@
 
 }
 
-#announcementList{
+@media (min-width:768px){
 
-    max-width:700px;
+    #announcementList{
 
-    margin:auto;
+        display:grid;
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:20px;
+
+        max-width:1200px;
+
+    }
+
+}
+
+@media (min-width:1200px){
+
+    #announcementList{
+
+        grid-template-columns:
+        repeat(3,1fr);
+
+    }
 
 }
 
@@ -1525,39 +1545,122 @@
 
 }
 
-@media(
-    min-width:768px
-){
+/* =========================
+   平板版
+========================= */
 
-    #announcementList{
+@media (min-width:768px){
+
+    .hero{
 
         display:grid;
 
         grid-template-columns:
-        repeat(
-            2,
-            1fr
-        );
+        1fr 1fr;
 
-        gap:20px;
+        gap:60px;
+
+        text-align:left;
+
+        padding:140px 60px 80px;
+
+    }
+
+    .hero-content{
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:row;
+
+        justify-content:flex-start;
+
+    }
+
+    .about p{
+
+        max-width:900px;
+
+    }
+
+    .environment{
+
+        padding:80px 40px;
+
+    }
+
+    .environment-grid{
+
+        display:grid;
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:25px;
 
         max-width:1200px;
+
+        margin:auto;
 
     }
 
 }
 
-@media(
-    min-width:1200px
-){
+/* =========================
+   桌機版
+========================= */
 
-    #announcementList{
+@media (min-width:1200px){
+
+    .hero{
+
+        max-width:1400px;
+
+        margin:auto;
+
+    }
+
+    .hero h1{
+
+        font-size:4rem;
+
+    }
+
+    .description{
+
+        font-size:1.15rem;
+
+    }
+
+    .environment-grid{
 
         grid-template-columns:
-        repeat(
-            3,
-            1fr
-        );
+        repeat(3,1fr);
+
+    }
+
+    .about{
+
+        padding:100px 40px;
+
+    }
+
+}
+
+@media (min-width:768px){
+
+    .profile-card{
+
+        max-width:900px;
+
+        margin:auto;
 
     }
 
