@@ -298,8 +298,6 @@
 
     padding:80px 20px;
 
-    background:#EAFDFC;
-
     text-align:center;
 
 }
@@ -569,8 +567,6 @@
     padding:80px 20px;
 
     text-align:center;
-
-    background:#EAFDFC;
 
 }
 
@@ -1023,8 +1019,6 @@
 
     padding:80px 25px;
 
-    background:#EAFDFC;
-
 }
 
 .booking-rules h2{
@@ -1193,8 +1187,6 @@
     padding:80px 20px;
 
     text-align:center;
-
-    background:#EAFDFC;
 
 }
 
@@ -1929,5 +1921,14 @@
         #BFEAE8 40%,
         #8EDDD9 100%
     );
+
+}
+
+.announcement-section,
+.environment,
+.location,
+.booking-rules{
+
+    background:none;
 
 }
