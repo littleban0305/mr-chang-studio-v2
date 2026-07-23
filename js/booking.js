@@ -197,6 +197,19 @@ fetch(
             }
         );
 
+        hideLoading();
+
+    }
+);
+.catch(
+    error=>{
+
+        hideLoading();
+
+        console.error(
+            error
+        );
+
     }
 );
 
