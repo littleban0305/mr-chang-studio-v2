@@ -255,18 +255,7 @@ fetch(
         
             }
         )
-        .join("")
-        
-        +
-        
-        `
-        <a
-            href="announcements.html"
-            class="announcement-more-btn"
-        >
-            查看更多公告 →
-        </a>
-        `;
+        .join("");
 
         checkLoading();
 
