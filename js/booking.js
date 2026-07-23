@@ -200,7 +200,7 @@ fetch(
         hideLoading();
 
     }
-);
+)
 .catch(
     error=>{
 
