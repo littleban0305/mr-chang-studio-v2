@@ -42,6 +42,8 @@ fetch(
             settings.bookingEnd
         );
 
+        loadNotifications();
+
         updateBookingButton();
 
         setInterval(
@@ -53,6 +55,117 @@ fetch(
 
     }
 );
+
+function loadNotifications(){
+
+    const email =
+    localStorage.getItem(
+        "memberEmail"
+    );
+
+    if(
+        !email
+    ){
+        return;
+    }
+
+    fetch(
+
+        "https://script.google.com/macros/s/AKfycbyjyjZ891V-eMkAtImiB1Cl3fUTubcDhb_6sF6MPezzAdaIXr3_N1q5kZ5SbHpPHDhC/exec"
+
+        +
+
+        "?action=getNotifications"
+
+        +
+
+        "&email="
+
+        +
+
+        encodeURIComponent(
+            email
+        )
+
+    )
+    .then(
+        response=>response.json()
+    )
+    .then(
+        notifications=>{
+
+            const list =
+            document.getElementById(
+                "notificationList"
+            );
+
+            if(
+                notifications.length
+                ===
+                0
+            ){
+
+                list.innerHTML = `
+                    <div
+                        class="notification-empty"
+                    >
+                        目前沒有通知
+                    </div>
+                `;
+
+                return;
+
+            }
+
+            list.innerHTML =
+            notifications
+            .map(
+                n=>`
+
+                <div
+                    class="notification-item"
+                >
+
+                    <div
+                        class="notification-title"
+                    >
+
+                        ${n.title}
+
+                    </div>
+
+                    <div
+                        class="notification-message"
+                    >
+
+                        ${n.message}
+
+                    </div>
+
+                    <div
+                        class="notification-time"
+                    >
+
+                        ${n.time}
+
+                    </div>
+
+                </div>
+
+                `
+            )
+            .join("");
+
+            updateBadge(
+                notifications
+            );
+
+            checkLoading();
+
+        }
+    );
+
+}
 
 function updateBookingButton(){
 
@@ -267,7 +380,7 @@ function checkLoading(){
     loadedCount++;
 
     if(
-        loadedCount >= 2
+        loadedCount >= 3
     ){
 
         hideLoading();
