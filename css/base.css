@@ -50,6 +50,8 @@ body{
 
     margin-top:80px;
 
+    position:relative;
+
 }
 
 .hero-image{
@@ -129,12 +131,6 @@ body{
         font-size:3rem;
 
     }
-
-}
-
-.hero{
-
-    position:relative;
 
 }
 
