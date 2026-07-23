@@ -140,17 +140,15 @@ body{
 
 .scroll-indicator{
 
-    position:absolute;
+    text-align:center;
 
-    bottom:30px;
-
-    left:50%;
-
-    transform:translateX(-50%);
+    font-size:1.5rem;
 
     color:#0ABAB5;
 
-    font-size:2rem;
+    padding-top:20px;
+
+    margin-bottom:10px;
 
     opacity:.8;
 
