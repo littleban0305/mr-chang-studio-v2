@@ -19,29 +19,13 @@
 @keyframes swipeUp{
 
     0%{
-
         transform:
-        translateX(-50%)
         translateY(3px);
-
-        opacity:.5;
-
-    }
-
-    50%{
-
-        opacity:1;
-
     }
 
     100%{
-
         transform:
-        translateX(-50%)
         translateY(-3px);
-
-        opacity:.5;
-
     }
 
 }
