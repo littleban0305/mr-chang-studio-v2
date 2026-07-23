@@ -99,7 +99,7 @@ body{
     }
 
     .hero h1{
-        font-size:3rem;
+        font-size:2rem;
     }
 
 }
@@ -118,7 +118,15 @@ body{
 
         text-align:center;
 
-        min-height:80vh;
+    }
+
+}
+
+@media (min-width:1200px){
+
+    .hero h1{
+
+        font-size:3rem;
 
     }
 
