@@ -1069,11 +1069,21 @@
 
     width:100%;
 
-    max-width:500px;
+    max-width:450px;
 
     margin:40px auto 0;
 
     border-radius:20px;
+
+}
+
+@media (max-width:768px){
+
+    .rules-image{
+
+        max-width:90%;
+
+    }
 
 }
 
