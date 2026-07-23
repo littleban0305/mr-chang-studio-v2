@@ -1524,3 +1524,41 @@
     }
 
 }
+
+@media(
+    min-width:768px
+){
+
+    #announcementList{
+
+        display:grid;
+
+        grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+
+        gap:20px;
+
+        max-width:1200px;
+
+    }
+
+}
+
+@media(
+    min-width:1200px
+){
+
+    #announcementList{
+
+        grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    }
+
+}
