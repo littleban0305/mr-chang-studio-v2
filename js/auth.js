@@ -181,7 +181,7 @@ function loadMemberData(
             "profile.html";
 
         }
-    );
+    )
     .catch(
         error=>{
     
