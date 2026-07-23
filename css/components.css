@@ -1787,3 +1787,22 @@
     }
 
 }
+
+@media (min-width:1200px){
+
+    .rules-grid{
+
+        display:grid;
+
+        grid-template-columns:
+        repeat(3,1fr);
+
+        gap:40px;
+
+        max-width:1200px;
+
+        margin:auto;
+
+    }
+
+}
