@@ -1,3 +1,31 @@
+const isMobile =
+/Android|iPhone|iPod/i
+.test(
+    navigator.userAgent
+);
+
+if(
+    !isMobile
+){
+
+    document.body.innerHTML = `
+
+        <div class="desktop-coming">
+
+            <h1>
+                🚧 電腦版與平板版開發中
+            </h1>
+
+            <p>
+                目前請使用手機瀏覽
+            </p>
+
+        </div>
+
+    `;
+
+}
+
 const menuBtn =
 document.getElementById("menuBtn");
 
