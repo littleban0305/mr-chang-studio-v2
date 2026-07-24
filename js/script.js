@@ -4,17 +4,39 @@ document.getElementById("menuBtn");
 const mobileMenu =
 document.getElementById("mobileMenu");
 
-menuBtn.addEventListener("click", () => {
+const isLogin =
+localStorage.getItem(
+    "isLogin"
+);
 
-    if(
-        mobileMenu.style.display === "flex"
-    ){
-        mobileMenu.style.display = "none";
-    }else{
-        mobileMenu.style.display = "flex";
-    }
+if(menuBtn && mobileMenu){
 
-});
+    menuBtn.addEventListener(
+        "click",
+        ()=>{
+
+            if(
+                mobileMenu.style.display
+                ===
+                "flex"
+            ){
+
+                mobileMenu.style.display =
+                "none";
+
+            }
+
+            else{
+
+                mobileMenu.style.display =
+                "flex";
+
+            }
+
+        }
+    );
+
+}
 
 function markNotificationsRead(){
 
@@ -52,9 +74,7 @@ function markNotificationsRead(){
 
 }
 
-function showLoading(
-    text
-){
+function showLoading(text){
 
     const overlay =
     document.getElementById(
@@ -116,29 +136,54 @@ document.getElementById(
     "notificationPanel"
 );
 
-notificationBtn?.addEventListener(
-    "click",
-    ()=>{
+if(
+    notificationBtn
+){
 
-        if(
-            notificationPanel.style.display
-            ===
-            "block"
-        ){
+    if(
+        !isLogin
+    ){
 
-            notificationPanel.style.display =
-            "none";
-
-        }
-
-        else{
-
-            notificationPanel.style.display =
-            "block";
-
-        }
-
-        markNotificationsRead();
+        notificationBtn.style.display =
+        "none";
 
     }
-);
+
+    else{
+
+        notificationBtn.style.display =
+        "flex";
+
+        notificationBtn.addEventListener(
+            "click",
+            ()=>{
+
+                if(
+                    notificationPanel &&
+                    notificationPanel.style.display
+                    ===
+                    "block"
+                ){
+
+                    notificationPanel.style.display =
+                    "none";
+
+                }
+
+                else if(
+                    notificationPanel
+                ){
+
+                    notificationPanel.style.display =
+                    "block";
+
+                }
+
+                markNotificationsRead();
+
+            }
+        );
+
+    }
+
+}
