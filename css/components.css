@@ -1268,6 +1268,10 @@
 
     margin-bottom:10px;
 
+    position:relative;
+
+    top:-5px;
+
 }
 
 .announcement-card h3{
