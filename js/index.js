@@ -116,43 +116,56 @@ if(isLogin){
 
 }
 
-const slider =
-document.getElementById(
-    "locationSlider"
+const cards =
+document.querySelectorAll(
+    ".location-card"
 );
 
-document
-.getElementById(
-    "prevLocation"
-)
-.addEventListener(
+let currentIndex = 0;
+
+nextBtn.addEventListener(
     "click",
     ()=>{
 
-        slider.scrollBy({
+        if(
+            currentIndex <
+            cards.length - 1
+        ){
 
-            left:-350,
+            currentIndex++;
 
-            behavior:"smooth"
+        }
+
+        cards[currentIndex]
+        .scrollIntoView({
+
+            behavior:"smooth",
+
+            inline:"start"
 
         });
 
     }
 );
 
-document
-.getElementById(
-    "nextLocation"
-)
-.addEventListener(
+prevBtn.addEventListener(
     "click",
     ()=>{
 
-        slider.scrollBy({
+        if(
+            currentIndex > 0
+        ){
 
-            left:350,
+            currentIndex--;
 
-            behavior:"smooth"
+        }
+
+        cards[currentIndex]
+        .scrollIntoView({
+
+            behavior:"smooth",
+
+            inline:"start"
 
         });
 
