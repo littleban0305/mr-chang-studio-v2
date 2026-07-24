@@ -249,3 +249,48 @@ body{
     font-weight:600;
 
 }
+
+.location-wrapper{
+
+    position:relative;
+
+}
+
+.slider-btn{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+    0 4px 15px rgba(0,0,0,.15);
+
+    cursor:pointer;
+
+    z-index:10;
+
+}
+
+#prevLocation{
+
+    left:-20px;
+
+}
+
+#nextLocation{
+
+    right:-20px;
+
+}
