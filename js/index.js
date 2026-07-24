@@ -3,11 +3,6 @@ document.getElementById(
     "locationSlider"
 );
 
-const isLogin =
-localStorage.getItem(
-    "isLogin"
-);
-
 if(isLogin){
 
     slider.innerHTML = `
