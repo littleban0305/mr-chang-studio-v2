@@ -204,6 +204,18 @@ body{
 
 }
 
+.location-lock{
+
+    text-align:center;
+
+    padding:40px;
+
+    background:white;
+
+    border-radius:20px;
+
+}
+
 .location-card p{
 
     padding:18px;
