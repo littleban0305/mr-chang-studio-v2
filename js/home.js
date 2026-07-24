@@ -10,11 +10,6 @@ document.getElementById(
     "bookingEntryBtn"
 );
 
-const isLogin =
-localStorage.getItem(
-    "isLogin"
-);
-
 let startTime;
 let endTime;
 
