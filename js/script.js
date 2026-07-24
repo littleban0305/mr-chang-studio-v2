@@ -4,6 +4,11 @@ document.getElementById("menuBtn");
 const mobileMenu =
 document.getElementById("mobileMenu");
 
+const isLogin =
+localStorage.getItem(
+    "isLogin"
+);
+
 if(menuBtn && mobileMenu){
 
     menuBtn.addEventListener(
