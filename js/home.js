@@ -416,8 +416,11 @@ function checkLoading(){
 
     loadedCount++;
 
+    const targetCount =
+    isLogin ? 3 : 2;
+
     if(
-        loadedCount >= 3
+        loadedCount >= targetCount
     ){
 
         hideLoading();
