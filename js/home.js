@@ -10,6 +10,11 @@ document.getElementById(
     "bookingEntryBtn"
 );
 
+const isLogin =
+localStorage.getItem(
+    "isLogin"
+);
+
 let startTime;
 let endTime;
 
@@ -42,7 +47,11 @@ fetch(
             settings.bookingEnd
         );
 
-        loadNotifications();
+        if(isLogin){
+        
+            loadNotifications();
+        
+        }
 
         updateBookingButton();
 
