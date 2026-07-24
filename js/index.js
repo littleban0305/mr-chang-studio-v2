@@ -12,8 +12,6 @@ if(isLogin){
 
     locationContent.innerHTML = `
 
-        <div class="location-slider">
-
             <div class="location-card">
 
                 <div class="card-tag">
@@ -92,8 +90,6 @@ if(isLogin){
 
             </div>
 
-        </div>
-
     `;
 
 }else{
@@ -116,32 +112,30 @@ if(isLogin){
 
 }
 
-const cards =
-document.querySelectorAll(
-    ".location-card"
+const slider =
+document.getElementById(
+    "locationSlider"
 );
 
-let currentIndex = 0;
+const nextBtn =
+document.getElementById(
+    "nextLocation"
+);
+
+const prevBtn =
+document.getElementById(
+    "prevLocation"
+);
 
 nextBtn.addEventListener(
     "click",
     ()=>{
 
-        if(
-            currentIndex <
-            cards.length - 1
-        ){
+        slider.scrollBy({
 
-            currentIndex++;
+            left:350,
 
-        }
-
-        cards[currentIndex]
-        .scrollIntoView({
-
-            behavior:"smooth",
-
-            inline:"start"
+            behavior:"smooth"
 
         });
 
@@ -152,20 +146,11 @@ prevBtn.addEventListener(
     "click",
     ()=>{
 
-        if(
-            currentIndex > 0
-        ){
+        slider.scrollBy({
 
-            currentIndex--;
+            left:-350,
 
-        }
-
-        cards[currentIndex]
-        .scrollIntoView({
-
-            behavior:"smooth",
-
-            inline:"start"
+            behavior:"smooth"
 
         });
 
