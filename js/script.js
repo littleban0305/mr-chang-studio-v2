@@ -9,19 +9,41 @@ if(
 ){
 
     document.body.innerHTML = `
-
-        <div class="desktop-coming">
-
-            <h1>
-                🚧 電腦版與平板版開發中
-            </h1>
-
-            <p>
-                目前請使用手機瀏覽
-            </p>
-
+    
+    <div class="coming-page">
+    
+        <img
+            src="assets/logo.png"
+            class="coming-logo"
+        >
+    
+        <div class="coming-badge">
+    
+            Coming Soon
+    
         </div>
-
+    
+        <h1>
+    
+            電腦版與平板版開發中
+    
+        </h1>
+    
+        <p>
+    
+            目前建議使用手機瀏覽<br>
+            我們正在打造更好的使用體驗
+    
+        </p>
+    
+        <div class="coming-phone">
+    
+            📱 手機版已開放使用
+    
+        </div>
+    
+    </div>
+    
     `;
 
 }
