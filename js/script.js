@@ -15,7 +15,7 @@ if(
         <div class="coming-card">
     
             <img
-                src="assets/logo.png"
+                src="assets/logo1.png"
                 class="coming-logo"
             >
         
