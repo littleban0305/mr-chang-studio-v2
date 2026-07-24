@@ -154,3 +154,86 @@ body{
     swipeUp 2s infinite;
 
 }
+
+.location-slider{
+
+    display:flex;
+
+    gap:20px;
+
+    overflow-x:auto;
+
+    scroll-snap-type:x mandatory;
+
+    padding:10px 5px 20px;
+
+}
+
+.location-card{
+
+    min-width:320px;
+
+    max-width:320px;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    flex-shrink:0;
+
+    scroll-snap-align:start;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.08);
+
+    position:relative;
+
+}
+
+.location-card img{
+
+    width:100%;
+
+    height:240px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.location-card p{
+
+    padding:18px;
+
+    font-size:1rem;
+
+    font-weight:500;
+
+    line-height:1.6;
+
+}
+
+.card-tag{
+
+    position:absolute;
+
+    top:15px;
+
+    left:15px;
+
+    background:#0ABAB5;
+
+    color:white;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+}
