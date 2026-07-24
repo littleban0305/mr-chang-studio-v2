@@ -1,6 +1,6 @@
-const locationContent =
+const slider =
 document.getElementById(
-    "locationContent"
+    "locationSlider"
 );
 
 const isLogin =
@@ -10,91 +10,91 @@ localStorage.getItem(
 
 if(isLogin){
 
-    locationContent.innerHTML = `
+    slider.innerHTML = `
 
-            <div class="location-card">
+        <div class="location-card">
 
-                <div class="card-tag">
-                    張老師工作室
-                </div>
-
-                <img src="assets/location/1.jpg">
-
-                <p>
-                    新北市新店區北新路二段92巷1號11樓
-                </p>
-
+            <div class="card-tag">
+                張老師工作室
             </div>
 
-            <div class="location-card">
+            <img src="assets/location/1.jpg">
 
-                <img src="assets/location/2.jpg">
+            <p>
+                新北市新店區北新路二段92巷1號11樓
+            </p>
 
-                <p>
-                    在"NET"與"三花生活館"中間
-                </p>
+        </div>
 
+        <div class="location-card">
+
+            <img src="assets/location/2.jpg">
+
+            <p>
+                在"NET"與"三花生活館"中間
+            </p>
+
+        </div>
+
+        <div class="location-card">
+
+            <div class="card-tag">
+                一樓大廳 兩部電梯都可搭
             </div>
 
-            <div class="location-card">
+            <img src="assets/location/3.jpg">
 
-                <div class="card-tag">
-                    一樓大廳 兩部電梯都可搭
-                </div>
+            <p>
+                跟管理員說 100號11樓 本號 張老師
+            </p>
 
-                <img src="assets/location/3.jpg">
+        </div>
 
-                <p>
-                    跟管理員說 100號11樓 本號 張老師
-                </p>
+        <div class="location-card">
 
-            </div>
+            <img src="assets/location/4.jpg">
 
-            <div class="location-card">
+            <p>
+                到11樓往這個方向走
+            </p>
 
-                <img src="assets/location/4.jpg">
+        </div>
 
-                <p>
-                    到11樓往這個方向走
-                </p>
+        <div class="location-card">
 
-            </div>
+            <img src="assets/location/5.jpg">
 
-            <div class="location-card">
+            <p>
+                經過消防栓左轉
+            </p>
 
-                <img src="assets/location/5.jpg">
+        </div>
 
-                <p>
-                    經過消防栓左轉
-                </p>
+        <div class="location-card">
 
-            </div>
+            <img src="assets/location/6.jpg">
 
-            <div class="location-card">
+            <p>
+                左邊第一間
+            </p>
 
-                <img src="assets/location/6.jpg">
+        </div>
 
-                <p>
-                    左邊第一間
-                </p>
+        <div class="location-card">
 
-            </div>
+            <img src="assets/location/7.jpg">
 
-            <div class="location-card">
+            <p>
+                100號11樓(本號)
+            </p>
 
-                <img src="assets/location/7.jpg">
-
-                <p>
-                    100號11樓(本號)
-                </p>
-
-            </div>
+        </div>
 
     `;
 
 }else{
 
-    locationContent.innerHTML = `
+    slider.innerHTML = `
 
         <div class="location-lock">
 
@@ -112,11 +112,6 @@ if(isLogin){
 
 }
 
-const slider =
-document.getElementById(
-    "locationSlider"
-);
-
 const nextBtn =
 document.getElementById(
     "nextLocation"
@@ -127,13 +122,13 @@ document.getElementById(
     "prevLocation"
 );
 
-nextBtn.addEventListener(
+nextBtn?.addEventListener(
     "click",
     ()=>{
 
         slider.scrollBy({
 
-            left:350,
+            left:400,
 
             behavior:"smooth"
 
@@ -142,13 +137,13 @@ nextBtn.addEventListener(
     }
 );
 
-prevBtn.addEventListener(
+prevBtn?.addEventListener(
     "click",
     ()=>{
 
         slider.scrollBy({
 
-            left:-350,
+            left:-400,
 
             behavior:"smooth"
 
