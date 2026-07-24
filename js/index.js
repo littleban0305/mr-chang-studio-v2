@@ -115,3 +115,46 @@ if(isLogin){
     `;
 
 }
+
+const slider =
+document.getElementById(
+    "locationSlider"
+);
+
+document
+.getElementById(
+    "prevLocation"
+)
+.addEventListener(
+    "click",
+    ()=>{
+
+        slider.scrollBy({
+
+            left:-350,
+
+            behavior:"smooth"
+
+        });
+
+    }
+);
+
+document
+.getElementById(
+    "nextLocation"
+)
+.addEventListener(
+    "click",
+    ()=>{
+
+        slider.scrollBy({
+
+            left:350,
+
+            behavior:"smooth"
+
+        });
+
+    }
+);
